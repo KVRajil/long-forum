@@ -1,0 +1,287 @@
+/*!
+ * # Semantic UI 2.1.3 - Ad
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+/*******************************
+         Advertisement
+*******************************/
+/* line 18, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.ad {
+  display: block;
+  overflow: hidden;
+  margin: 1em 0em;
+}
+
+/* line 23, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.ad:first-child {
+  margin: 0em;
+}
+
+/* line 26, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.ad:last-child {
+  margin: 0em;
+}
+
+/* line 29, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.ad iframe {
+  margin: 0em;
+  padding: 0em;
+  border: none;
+  overflow: hidden;
+}
+
+/*--------------
+     Common
+---------------*/
+/* Leaderboard */
+/* line 42, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.leaderboard.ad {
+  width: 728px;
+  height: 90px;
+}
+
+/* Medium Rectangle */
+/* line 48, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="medium rectangle"].ad {
+  width: 300px;
+  height: 250px;
+}
+
+/* Large Rectangle */
+/* line 54, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="large rectangle"].ad {
+  width: 336px;
+  height: 280px;
+}
+
+/* Half Page */
+/* line 60, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="half page"].ad {
+  width: 300px;
+  height: 600px;
+}
+
+/*--------------
+     Square
+---------------*/
+/* Square */
+/* line 71, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.square.ad {
+  width: 250px;
+  height: 250px;
+}
+
+/* Small Square */
+/* line 77, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="small square"].ad {
+  width: 200px;
+  height: 200px;
+}
+
+/*--------------
+    Rectangle
+---------------*/
+/* Small Rectangle */
+/* line 88, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="small rectangle"].ad {
+  width: 180px;
+  height: 150px;
+}
+
+/* Vertical Rectangle */
+/* line 94, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="vertical rectangle"].ad {
+  width: 240px;
+  height: 400px;
+}
+
+/*--------------
+     Button
+---------------*/
+/* line 103, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.button.ad {
+  width: 120px;
+  height: 90px;
+}
+
+/* line 107, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="square button"].ad {
+  width: 125px;
+  height: 125px;
+}
+
+/* line 111, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="small button"].ad {
+  width: 120px;
+  height: 60px;
+}
+
+/*--------------
+   Skyscrapers
+---------------*/
+/* Skyscraper */
+/* line 122, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.skyscraper.ad {
+  width: 120px;
+  height: 600px;
+}
+
+/* Wide Skyscraper */
+/* line 128, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="wide skyscraper"].ad {
+  width: 160px;
+}
+
+/*--------------
+     Banners
+---------------*/
+/* Banner */
+/* line 138, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.banner.ad {
+  width: 468px;
+  height: 60px;
+}
+
+/* Vertical Banner */
+/* line 144, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="vertical banner"].ad {
+  width: 120px;
+  height: 240px;
+}
+
+/* Top Banner */
+/* line 150, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="top banner"].ad {
+  width: 930px;
+  height: 180px;
+}
+
+/* Half Banner */
+/* line 156, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="half banner"].ad {
+  width: 234px;
+  height: 60px;
+}
+
+/*--------------
+    Boards
+---------------*/
+/* Leaderboard */
+/* line 167, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="large leaderboard"].ad {
+  width: 970px;
+  height: 90px;
+}
+
+/* Billboard */
+/* line 173, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.billboard.ad {
+  width: 970px;
+  height: 250px;
+}
+
+/*--------------
+    Panorama
+---------------*/
+/* Panorama */
+/* line 184, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.panorama.ad {
+  width: 980px;
+  height: 120px;
+}
+
+/*--------------
+     Netboard
+---------------*/
+/* Netboard */
+/* line 195, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.netboard.ad {
+  width: 580px;
+  height: 400px;
+}
+
+/*--------------
+     Mobile
+---------------*/
+/* Large Mobile Banner */
+/* line 206, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="large mobile banner"].ad {
+  width: 320px;
+  height: 100px;
+}
+
+/* Mobile Leaderboard */
+/* line 212, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui[class*="mobile leaderboard"].ad {
+  width: 320px;
+  height: 50px;
+}
+
+/*******************************
+             Types
+*******************************/
+/* Mobile Sizes */
+/* line 224, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.mobile.ad {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  /* line 228, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+  .ui.mobile.ad {
+    display: block;
+  }
+}
+/*******************************
+           Variations
+*******************************/
+/* line 238, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.centered.ad {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 242, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.test.ad {
+  position: relative;
+  background: #545454;
+}
+
+/* line 246, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.test.ad:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  content: 'Ad';
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* line 260, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.mobile.test.ad:after {
+  font-size: 0.85714286em;
+}
+
+/* line 263, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/views/_ad.scss */
+.ui.test.ad[data-text]:after {
+  content: attr(data-text);
+}
+
+/*******************************
+         Theme Overrides
+*******************************/
+/*******************************
+    User Variable Overrides
+*******************************/

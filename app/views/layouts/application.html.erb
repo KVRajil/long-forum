@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Longforum</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= Gon::Base.render_data %>
+</head>
+<body>
+  <p class="navbar-text pull-right">
+
+
+  <div class="ui blue inverted menu navbar">
+      <a href="" class="active item"><i class="home icon"></i></a>
+      <div class="item"><%= link_to 'Home', root_url%></div>
+      <% if user_signed_in? %>
+      <a href="" class="item">  Logged in as <strong><%= current_user.email %></strong></a>
+      <div class="item"><%= link_to 'Edit profile', edit_user_registration_path%></div>
+      <div class="item">  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></div>
+      <div class="item"><%= link_to "profile", current_user %></div>
+      <% else %>
+      <div class="item">  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></div>
+      <div class="item">  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></div>
+      <% end %>
+  </div>
+  <div class = "ui container">
+    <div class="ui four item menu">
+      <div class="item"><%= link_to"Public" , list_path(:type => 'public') %></div>
+      <div class="item"><%= link_to"Private" , list_path(:type => 'private') %></div>
+      <div class="item"><%= link_to"Favorites" , list_path(:type =>'favorite') %></div>
+      <div class="item "><%= link_to"My posts" , list_path(:type => 'my') %></div>
+
+    </div>
+  </div>
+  <%= yield %>
+</body>
+</html>

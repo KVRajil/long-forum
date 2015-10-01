@@ -1,0 +1,10 @@
+<div class="ui left labeled button" tabindex="0">
+    <a class="ui basic right pointing label">
+        <%= @article.favorites.count %>
+    </a>
+    <% if current_user.favorite_articles.include? @article %>
+      <%= link_to ('<div class = "ui button"><i class="yellow star icon"></i></div>').html_safe , :controller => "articles", :action => "favorite", method: "post", :remote => true  %>
+    <% else %>
+      <%= link_to ('<div class = "ui button"><i class="star icon"></i></div>').html_safe , :controller => "articles", :action => "favorite", method: "post", :remote => true  %>
+    <% end %>
+  </div>

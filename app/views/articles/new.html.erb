@@ -1,0 +1,28 @@
+<div class="newpost">
+    <div align=center >
+
+    <%= form_for :article, url: articles_path do |f| %>
+      <%= hidden_field_tag :parent_type, @parent_type%>
+    <div class="ui form art">
+      <div class="ten wide field">
+          <div class="field">
+              <%= f.text_field :title,  :placeholder => 'Title' %>
+          </div>
+          <div class="field">
+              <%= f.cktext_area :text,  :placeholder => 'enter description here'%>
+          </div>
+          <div class="field">
+            <label>tags</label>
+            <ul id="article-tags"></ul>
+          </div>
+          <div class="field">
+              <%= f.select :visibility, options_for_select([["Public", "public"], ["Private", "public"]]) %>
+          </div>
+
+              <%= f.submit "Post" , class:"ui button large fluid green" %>
+       </div>
+    </div>
+  <% end %>
+  </div>
+  </div>
+</div>

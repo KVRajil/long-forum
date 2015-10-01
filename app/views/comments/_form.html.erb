@@ -1,0 +1,15 @@
+
+<h3 class="ui dividing header"> </h3>
+<div class="ui reply form art">
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.cktext_area :body%>
+    </div>
+    <div class="field">
+      <label>tags</label>
+      <ul id="comment-tags"></ul>
+    </div>
+      <%= f.submit "Comment" , class:"ui secondary button" %>
+
+<% end %>
+</div>

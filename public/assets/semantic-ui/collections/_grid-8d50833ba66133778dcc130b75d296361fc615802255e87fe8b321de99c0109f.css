@@ -1,0 +1,2481 @@
+/*!
+ * # Semantic UI 2.1.3 - Grid
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+/*******************************
+            Standard
+*******************************/
+/* line 18, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 0em;
+}
+
+/*----------------------
+      Remove Gutters
+-----------------------*/
+/* line 42, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid {
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+/* line 48, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.relaxed.grid {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+/* line 52, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="very relaxed"].grid {
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+}
+
+/* Preserve Rows Spacing on Consecutive Grids */
+/* line 58, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid + .grid {
+  margin-top: 1rem;
+}
+
+/*-------------------
+       Columns
+--------------------*/
+/* Standard 16 column */
+/* line 68, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  position: relative;
+  display: inline-block;
+  width: 6.25%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  vertical-align: top;
+}
+
+/* line 77, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > * {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/*-------------------
+        Rows
+--------------------*/
+/* line 86, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: inherit;
+  -webkit-justify-content: inherit;
+  -ms-flex-pack: inherit;
+  justify-content: inherit;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100% !important;
+  padding: 0rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/*-------------------
+       Columns
+--------------------*/
+/* Vertical padding when no rows */
+/* line 120, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .column:not(.row) {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* line 124, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > .column {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/*-------------------
+      Content
+--------------------*/
+/* line 133, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > img,
+.ui.grid > .row > .column > img {
+  max-width: 100%;
+}
+
+/*-------------------
+    Loose Coupling
+--------------------*/
+/* Collapse Margin on Consecutive Grid */
+/* line 144, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .ui.grid:first-child {
+  margin-top: 0em;
+}
+
+/* line 147, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .ui.grid:last-child {
+  margin-bottom: 0em;
+}
+
+/* Segment inside Aligned Grid */
+/* line 152, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid .aligned.row > .column > .segment:not(.compact),
+.ui.aligned.grid .column > .segment:not(.compact) {
+  width: 100%;
+}
+
+/* Align Dividers with Gutter */
+/* line 158, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid .row + .ui.divider {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 1rem 1rem;
+}
+
+/* line 165, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid .column + .ui.vertical.divider {
+  height: calc(50% -  1rem );
+}
+
+/* Remove Border on Last Horizontal Segment */
+/* line 170, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > .column:last-child > .horizontal.segment,
+.ui.grid > .column:last-child > .horizontal.segment {
+  box-shadow: none;
+}
+
+/*******************************
+           Variations
+*******************************/
+/*-----------------------
+       Page Grid
+-------------------------*/
+@media only screen and (max-width: 767px) {
+  /* line 186, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.page.grid {
+    width: auto;
+    padding-left: 0em;
+    padding-right: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 195, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 204, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  /* line 213, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  /* line 222, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.page.grid {
+    width: auto;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-left: 23%;
+    padding-right: 23%;
+  }
+}
+/*-------------------
+     Column Count
+--------------------*/
+/* Assume full width with one column */
+/* line 237, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .column:only-child,
+.ui.grid > .row > .column:only-child {
+  width: 100%;
+}
+
+/* Grid Based */
+/* line 243, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="one column"].grid > .row > .column,
+.ui[class*="one column"].grid > .column:not(.row) {
+  width: 100%;
+}
+
+/* line 247, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="two column"].grid > .row > .column,
+.ui[class*="two column"].grid > .column:not(.row) {
+  width: 50%;
+}
+
+/* line 251, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="three column"].grid > .row > .column,
+.ui[class*="three column"].grid > .column:not(.row) {
+  width: 33.33333333%;
+}
+
+/* line 255, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="four column"].grid > .row > .column,
+.ui[class*="four column"].grid > .column:not(.row) {
+  width: 25%;
+}
+
+/* line 259, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="five column"].grid > .row > .column,
+.ui[class*="five column"].grid > .column:not(.row) {
+  width: 20%;
+}
+
+/* line 263, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="six column"].grid > .row > .column,
+.ui[class*="six column"].grid > .column:not(.row) {
+  width: 16.66666667%;
+}
+
+/* line 267, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="seven column"].grid > .row > .column,
+.ui[class*="seven column"].grid > .column:not(.row) {
+  width: 14.28571429%;
+}
+
+/* line 271, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="eight column"].grid > .row > .column,
+.ui[class*="eight column"].grid > .column:not(.row) {
+  width: 12.5%;
+}
+
+/* line 275, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="nine column"].grid > .row > .column,
+.ui[class*="nine column"].grid > .column:not(.row) {
+  width: 11.11111111%;
+}
+
+/* line 279, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="ten column"].grid > .row > .column,
+.ui[class*="ten column"].grid > .column:not(.row) {
+  width: 10%;
+}
+
+/* line 283, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="eleven column"].grid > .row > .column,
+.ui[class*="eleven column"].grid > .column:not(.row) {
+  width: 9.09090909%;
+}
+
+/* line 287, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="twelve column"].grid > .row > .column,
+.ui[class*="twelve column"].grid > .column:not(.row) {
+  width: 8.33333333%;
+}
+
+/* line 291, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="thirteen column"].grid > .row > .column,
+.ui[class*="thirteen column"].grid > .column:not(.row) {
+  width: 7.69230769%;
+}
+
+/* line 295, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="fourteen column"].grid > .row > .column,
+.ui[class*="fourteen column"].grid > .column:not(.row) {
+  width: 7.14285714%;
+}
+
+/* line 299, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="fifteen column"].grid > .row > .column,
+.ui[class*="fifteen column"].grid > .column:not(.row) {
+  width: 6.66666667%;
+}
+
+/* line 303, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="sixteen column"].grid > .row > .column,
+.ui[class*="sixteen column"].grid > .column:not(.row) {
+  width: 6.25%;
+}
+
+/* Row Based Overrides */
+/* line 309, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="one column"].row > .column {
+  width: 100% !important;
+}
+
+/* line 312, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="two column"].row > .column {
+  width: 50% !important;
+}
+
+/* line 315, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="three column"].row > .column {
+  width: 33.33333333% !important;
+}
+
+/* line 318, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="four column"].row > .column {
+  width: 25% !important;
+}
+
+/* line 321, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="five column"].row > .column {
+  width: 20% !important;
+}
+
+/* line 324, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="six column"].row > .column {
+  width: 16.66666667% !important;
+}
+
+/* line 327, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="seven column"].row > .column {
+  width: 14.28571429% !important;
+}
+
+/* line 330, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="eight column"].row > .column {
+  width: 12.5% !important;
+}
+
+/* line 333, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="nine column"].row > .column {
+  width: 11.11111111% !important;
+}
+
+/* line 336, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="ten column"].row > .column {
+  width: 10% !important;
+}
+
+/* line 339, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="eleven column"].row > .column {
+  width: 9.09090909% !important;
+}
+
+/* line 342, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="twelve column"].row > .column {
+  width: 8.33333333% !important;
+}
+
+/* line 345, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="thirteen column"].row > .column {
+  width: 7.69230769% !important;
+}
+
+/* line 348, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="fourteen column"].row > .column {
+  width: 7.14285714% !important;
+}
+
+/* line 351, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="fifteen column"].row > .column {
+  width: 6.66666667% !important;
+}
+
+/* line 354, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > [class*="sixteen column"].row > .column {
+  width: 6.25% !important;
+}
+
+/* Celled Page */
+/* line 359, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.celled.page.grid {
+  box-shadow: none;
+}
+
+/*-------------------
+    Column Width
+--------------------*/
+/* Sizing Combinations */
+/* line 369, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="one wide"].column,
+.ui.grid > .column.row > [class*="one wide"].column,
+.ui.grid > [class*="one wide"].column,
+.ui.column.grid > [class*="one wide"].column {
+  width: 6.25% !important;
+}
+
+/* line 375, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="two wide"].column,
+.ui.grid > .column.row > [class*="two wide"].column,
+.ui.grid > [class*="two wide"].column,
+.ui.column.grid > [class*="two wide"].column {
+  width: 12.5% !important;
+}
+
+/* line 381, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="three wide"].column,
+.ui.grid > .column.row > [class*="three wide"].column,
+.ui.grid > [class*="three wide"].column,
+.ui.column.grid > [class*="three wide"].column {
+  width: 18.75% !important;
+}
+
+/* line 387, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="four wide"].column,
+.ui.grid > .column.row > [class*="four wide"].column,
+.ui.grid > [class*="four wide"].column,
+.ui.column.grid > [class*="four wide"].column {
+  width: 25% !important;
+}
+
+/* line 393, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="five wide"].column,
+.ui.grid > .column.row > [class*="five wide"].column,
+.ui.grid > [class*="five wide"].column,
+.ui.column.grid > [class*="five wide"].column {
+  width: 31.25% !important;
+}
+
+/* line 399, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="six wide"].column,
+.ui.grid > .column.row > [class*="six wide"].column,
+.ui.grid > [class*="six wide"].column,
+.ui.column.grid > [class*="six wide"].column {
+  width: 37.5% !important;
+}
+
+/* line 405, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="seven wide"].column,
+.ui.grid > .column.row > [class*="seven wide"].column,
+.ui.grid > [class*="seven wide"].column,
+.ui.column.grid > [class*="seven wide"].column {
+  width: 43.75% !important;
+}
+
+/* line 411, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="eight wide"].column,
+.ui.grid > .column.row > [class*="eight wide"].column,
+.ui.grid > [class*="eight wide"].column,
+.ui.column.grid > [class*="eight wide"].column {
+  width: 50% !important;
+}
+
+/* line 417, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="nine wide"].column,
+.ui.grid > .column.row > [class*="nine wide"].column,
+.ui.grid > [class*="nine wide"].column,
+.ui.column.grid > [class*="nine wide"].column {
+  width: 56.25% !important;
+}
+
+/* line 423, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="ten wide"].column,
+.ui.grid > .column.row > [class*="ten wide"].column,
+.ui.grid > [class*="ten wide"].column,
+.ui.column.grid > [class*="ten wide"].column {
+  width: 62.5% !important;
+}
+
+/* line 429, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="eleven wide"].column,
+.ui.grid > .column.row > [class*="eleven wide"].column,
+.ui.grid > [class*="eleven wide"].column,
+.ui.column.grid > [class*="eleven wide"].column {
+  width: 68.75% !important;
+}
+
+/* line 435, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="twelve wide"].column,
+.ui.grid > .column.row > [class*="twelve wide"].column,
+.ui.grid > [class*="twelve wide"].column,
+.ui.column.grid > [class*="twelve wide"].column {
+  width: 75% !important;
+}
+
+/* line 441, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="thirteen wide"].column,
+.ui.grid > .column.row > [class*="thirteen wide"].column,
+.ui.grid > [class*="thirteen wide"].column,
+.ui.column.grid > [class*="thirteen wide"].column {
+  width: 81.25% !important;
+}
+
+/* line 447, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="fourteen wide"].column,
+.ui.grid > .column.row > [class*="fourteen wide"].column,
+.ui.grid > [class*="fourteen wide"].column,
+.ui.column.grid > [class*="fourteen wide"].column {
+  width: 87.5% !important;
+}
+
+/* line 453, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="fifteen wide"].column,
+.ui.grid > .column.row > [class*="fifteen wide"].column,
+.ui.grid > [class*="fifteen wide"].column,
+.ui.column.grid > [class*="fifteen wide"].column {
+  width: 93.75% !important;
+}
+
+/* line 459, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > [class*="sixteen wide"].column,
+.ui.grid > .column.row > [class*="sixteen wide"].column,
+.ui.grid > [class*="sixteen wide"].column,
+.ui.column.grid > [class*="sixteen wide"].column {
+  width: 100% !important;
+}
+
+/*----------------------
+    Width per Device
+-----------------------*/
+/* Mobile Sizing Combinations */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  /* line 473, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="one wide mobile"].column,
+  .ui.grid > .column.row > [class*="one wide mobile"].column,
+  .ui.grid > [class*="one wide mobile"].column,
+  .ui.column.grid > [class*="one wide mobile"].column {
+    width: 6.25% !important;
+  }
+
+  /* line 479, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="two wide mobile"].column,
+  .ui.grid > .column.row > [class*="two wide mobile"].column,
+  .ui.grid > [class*="two wide mobile"].column,
+  .ui.column.grid > [class*="two wide mobile"].column {
+    width: 12.5% !important;
+  }
+
+  /* line 485, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="three wide mobile"].column,
+  .ui.grid > .column.row > [class*="three wide mobile"].column,
+  .ui.grid > [class*="three wide mobile"].column,
+  .ui.column.grid > [class*="three wide mobile"].column {
+    width: 18.75% !important;
+  }
+
+  /* line 491, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="four wide mobile"].column,
+  .ui.grid > .column.row > [class*="four wide mobile"].column,
+  .ui.grid > [class*="four wide mobile"].column,
+  .ui.column.grid > [class*="four wide mobile"].column {
+    width: 25% !important;
+  }
+
+  /* line 497, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="five wide mobile"].column,
+  .ui.grid > .column.row > [class*="five wide mobile"].column,
+  .ui.grid > [class*="five wide mobile"].column,
+  .ui.column.grid > [class*="five wide mobile"].column {
+    width: 31.25% !important;
+  }
+
+  /* line 503, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="six wide mobile"].column,
+  .ui.grid > .column.row > [class*="six wide mobile"].column,
+  .ui.grid > [class*="six wide mobile"].column,
+  .ui.column.grid > [class*="six wide mobile"].column {
+    width: 37.5% !important;
+  }
+
+  /* line 509, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="seven wide mobile"].column,
+  .ui.grid > .column.row > [class*="seven wide mobile"].column,
+  .ui.grid > [class*="seven wide mobile"].column,
+  .ui.column.grid > [class*="seven wide mobile"].column {
+    width: 43.75% !important;
+  }
+
+  /* line 515, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eight wide mobile"].column,
+  .ui.grid > .column.row > [class*="eight wide mobile"].column,
+  .ui.grid > [class*="eight wide mobile"].column,
+  .ui.column.grid > [class*="eight wide mobile"].column {
+    width: 50% !important;
+  }
+
+  /* line 521, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="nine wide mobile"].column,
+  .ui.grid > .column.row > [class*="nine wide mobile"].column,
+  .ui.grid > [class*="nine wide mobile"].column,
+  .ui.column.grid > [class*="nine wide mobile"].column {
+    width: 56.25% !important;
+  }
+
+  /* line 527, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="ten wide mobile"].column,
+  .ui.grid > .column.row > [class*="ten wide mobile"].column,
+  .ui.grid > [class*="ten wide mobile"].column,
+  .ui.column.grid > [class*="ten wide mobile"].column {
+    width: 62.5% !important;
+  }
+
+  /* line 533, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eleven wide mobile"].column,
+  .ui.grid > .column.row > [class*="eleven wide mobile"].column,
+  .ui.grid > [class*="eleven wide mobile"].column,
+  .ui.column.grid > [class*="eleven wide mobile"].column {
+    width: 68.75% !important;
+  }
+
+  /* line 539, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="twelve wide mobile"].column,
+  .ui.grid > .column.row > [class*="twelve wide mobile"].column,
+  .ui.grid > [class*="twelve wide mobile"].column,
+  .ui.column.grid > [class*="twelve wide mobile"].column {
+    width: 75% !important;
+  }
+
+  /* line 545, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="thirteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="thirteen wide mobile"].column,
+  .ui.grid > [class*="thirteen wide mobile"].column,
+  .ui.column.grid > [class*="thirteen wide mobile"].column {
+    width: 81.25% !important;
+  }
+
+  /* line 551, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fourteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="fourteen wide mobile"].column,
+  .ui.grid > [class*="fourteen wide mobile"].column,
+  .ui.column.grid > [class*="fourteen wide mobile"].column {
+    width: 87.5% !important;
+  }
+
+  /* line 557, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fifteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="fifteen wide mobile"].column,
+  .ui.grid > [class*="fifteen wide mobile"].column,
+  .ui.column.grid > [class*="fifteen wide mobile"].column {
+    width: 93.75% !important;
+  }
+
+  /* line 563, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="sixteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="sixteen wide mobile"].column,
+  .ui.grid > [class*="sixteen wide mobile"].column,
+  .ui.column.grid > [class*="sixteen wide mobile"].column {
+    width: 100% !important;
+  }
+}
+/* Tablet Sizing Combinations */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 573, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="one wide tablet"].column,
+  .ui.grid > .column.row > [class*="one wide tablet"].column,
+  .ui.grid > [class*="one wide tablet"].column,
+  .ui.column.grid > [class*="one wide tablet"].column {
+    width: 6.25% !important;
+  }
+
+  /* line 579, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="two wide tablet"].column,
+  .ui.grid > .column.row > [class*="two wide tablet"].column,
+  .ui.grid > [class*="two wide tablet"].column,
+  .ui.column.grid > [class*="two wide tablet"].column {
+    width: 12.5% !important;
+  }
+
+  /* line 585, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="three wide tablet"].column,
+  .ui.grid > .column.row > [class*="three wide tablet"].column,
+  .ui.grid > [class*="three wide tablet"].column,
+  .ui.column.grid > [class*="three wide tablet"].column {
+    width: 18.75% !important;
+  }
+
+  /* line 591, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="four wide tablet"].column,
+  .ui.grid > .column.row > [class*="four wide tablet"].column,
+  .ui.grid > [class*="four wide tablet"].column,
+  .ui.column.grid > [class*="four wide tablet"].column {
+    width: 25% !important;
+  }
+
+  /* line 597, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="five wide tablet"].column,
+  .ui.grid > .column.row > [class*="five wide tablet"].column,
+  .ui.grid > [class*="five wide tablet"].column,
+  .ui.column.grid > [class*="five wide tablet"].column {
+    width: 31.25% !important;
+  }
+
+  /* line 603, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="six wide tablet"].column,
+  .ui.grid > .column.row > [class*="six wide tablet"].column,
+  .ui.grid > [class*="six wide tablet"].column,
+  .ui.column.grid > [class*="six wide tablet"].column {
+    width: 37.5% !important;
+  }
+
+  /* line 609, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="seven wide tablet"].column,
+  .ui.grid > .column.row > [class*="seven wide tablet"].column,
+  .ui.grid > [class*="seven wide tablet"].column,
+  .ui.column.grid > [class*="seven wide tablet"].column {
+    width: 43.75% !important;
+  }
+
+  /* line 615, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eight wide tablet"].column,
+  .ui.grid > .column.row > [class*="eight wide tablet"].column,
+  .ui.grid > [class*="eight wide tablet"].column,
+  .ui.column.grid > [class*="eight wide tablet"].column {
+    width: 50% !important;
+  }
+
+  /* line 621, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="nine wide tablet"].column,
+  .ui.grid > .column.row > [class*="nine wide tablet"].column,
+  .ui.grid > [class*="nine wide tablet"].column,
+  .ui.column.grid > [class*="nine wide tablet"].column {
+    width: 56.25% !important;
+  }
+
+  /* line 627, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="ten wide tablet"].column,
+  .ui.grid > .column.row > [class*="ten wide tablet"].column,
+  .ui.grid > [class*="ten wide tablet"].column,
+  .ui.column.grid > [class*="ten wide tablet"].column {
+    width: 62.5% !important;
+  }
+
+  /* line 633, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eleven wide tablet"].column,
+  .ui.grid > .column.row > [class*="eleven wide tablet"].column,
+  .ui.grid > [class*="eleven wide tablet"].column,
+  .ui.column.grid > [class*="eleven wide tablet"].column {
+    width: 68.75% !important;
+  }
+
+  /* line 639, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="twelve wide tablet"].column,
+  .ui.grid > .column.row > [class*="twelve wide tablet"].column,
+  .ui.grid > [class*="twelve wide tablet"].column,
+  .ui.column.grid > [class*="twelve wide tablet"].column {
+    width: 75% !important;
+  }
+
+  /* line 645, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="thirteen wide tablet"].column,
+  .ui.grid > .column.row > [class*="thirteen wide tablet"].column,
+  .ui.grid > [class*="thirteen wide tablet"].column,
+  .ui.column.grid > [class*="thirteen wide tablet"].column {
+    width: 81.25% !important;
+  }
+
+  /* line 651, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fourteen wide tablet"].column,
+  .ui.grid > .column.row > [class*="fourteen wide tablet"].column,
+  .ui.grid > [class*="fourteen wide tablet"].column,
+  .ui.column.grid > [class*="fourteen wide tablet"].column {
+    width: 87.5% !important;
+  }
+
+  /* line 657, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fifteen wide tablet"].column,
+  .ui.grid > .column.row > [class*="fifteen wide tablet"].column,
+  .ui.grid > [class*="fifteen wide tablet"].column,
+  .ui.column.grid > [class*="fifteen wide tablet"].column {
+    width: 93.75% !important;
+  }
+
+  /* line 663, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="sixteen wide tablet"].column,
+  .ui.grid > .column.row > [class*="sixteen wide tablet"].column,
+  .ui.grid > [class*="sixteen wide tablet"].column,
+  .ui.column.grid > [class*="sixteen wide tablet"].column {
+    width: 100% !important;
+  }
+}
+/* Computer/Desktop Sizing Combinations */
+@media only screen and (min-width: 992px) {
+  /* line 673, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="one wide computer"].column,
+  .ui.grid > .column.row > [class*="one wide computer"].column,
+  .ui.grid > [class*="one wide computer"].column,
+  .ui.column.grid > [class*="one wide computer"].column {
+    width: 6.25% !important;
+  }
+
+  /* line 679, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="two wide computer"].column,
+  .ui.grid > .column.row > [class*="two wide computer"].column,
+  .ui.grid > [class*="two wide computer"].column,
+  .ui.column.grid > [class*="two wide computer"].column {
+    width: 12.5% !important;
+  }
+
+  /* line 685, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="three wide computer"].column,
+  .ui.grid > .column.row > [class*="three wide computer"].column,
+  .ui.grid > [class*="three wide computer"].column,
+  .ui.column.grid > [class*="three wide computer"].column {
+    width: 18.75% !important;
+  }
+
+  /* line 691, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="four wide computer"].column,
+  .ui.grid > .column.row > [class*="four wide computer"].column,
+  .ui.grid > [class*="four wide computer"].column,
+  .ui.column.grid > [class*="four wide computer"].column {
+    width: 25% !important;
+  }
+
+  /* line 697, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="five wide computer"].column,
+  .ui.grid > .column.row > [class*="five wide computer"].column,
+  .ui.grid > [class*="five wide computer"].column,
+  .ui.column.grid > [class*="five wide computer"].column {
+    width: 31.25% !important;
+  }
+
+  /* line 703, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="six wide computer"].column,
+  .ui.grid > .column.row > [class*="six wide computer"].column,
+  .ui.grid > [class*="six wide computer"].column,
+  .ui.column.grid > [class*="six wide computer"].column {
+    width: 37.5% !important;
+  }
+
+  /* line 709, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="seven wide computer"].column,
+  .ui.grid > .column.row > [class*="seven wide computer"].column,
+  .ui.grid > [class*="seven wide computer"].column,
+  .ui.column.grid > [class*="seven wide computer"].column {
+    width: 43.75% !important;
+  }
+
+  /* line 715, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eight wide computer"].column,
+  .ui.grid > .column.row > [class*="eight wide computer"].column,
+  .ui.grid > [class*="eight wide computer"].column,
+  .ui.column.grid > [class*="eight wide computer"].column {
+    width: 50% !important;
+  }
+
+  /* line 721, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="nine wide computer"].column,
+  .ui.grid > .column.row > [class*="nine wide computer"].column,
+  .ui.grid > [class*="nine wide computer"].column,
+  .ui.column.grid > [class*="nine wide computer"].column {
+    width: 56.25% !important;
+  }
+
+  /* line 727, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="ten wide computer"].column,
+  .ui.grid > .column.row > [class*="ten wide computer"].column,
+  .ui.grid > [class*="ten wide computer"].column,
+  .ui.column.grid > [class*="ten wide computer"].column {
+    width: 62.5% !important;
+  }
+
+  /* line 733, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eleven wide computer"].column,
+  .ui.grid > .column.row > [class*="eleven wide computer"].column,
+  .ui.grid > [class*="eleven wide computer"].column,
+  .ui.column.grid > [class*="eleven wide computer"].column {
+    width: 68.75% !important;
+  }
+
+  /* line 739, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="twelve wide computer"].column,
+  .ui.grid > .column.row > [class*="twelve wide computer"].column,
+  .ui.grid > [class*="twelve wide computer"].column,
+  .ui.column.grid > [class*="twelve wide computer"].column {
+    width: 75% !important;
+  }
+
+  /* line 745, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="thirteen wide computer"].column,
+  .ui.grid > .column.row > [class*="thirteen wide computer"].column,
+  .ui.grid > [class*="thirteen wide computer"].column,
+  .ui.column.grid > [class*="thirteen wide computer"].column {
+    width: 81.25% !important;
+  }
+
+  /* line 751, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fourteen wide computer"].column,
+  .ui.grid > .column.row > [class*="fourteen wide computer"].column,
+  .ui.grid > [class*="fourteen wide computer"].column,
+  .ui.column.grid > [class*="fourteen wide computer"].column {
+    width: 87.5% !important;
+  }
+
+  /* line 757, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fifteen wide computer"].column,
+  .ui.grid > .column.row > [class*="fifteen wide computer"].column,
+  .ui.grid > [class*="fifteen wide computer"].column,
+  .ui.column.grid > [class*="fifteen wide computer"].column {
+    width: 93.75% !important;
+  }
+
+  /* line 763, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="sixteen wide computer"].column,
+  .ui.grid > .column.row > [class*="sixteen wide computer"].column,
+  .ui.grid > [class*="sixteen wide computer"].column,
+  .ui.column.grid > [class*="sixteen wide computer"].column {
+    width: 100% !important;
+  }
+}
+/* Large Monitor Sizing Combinations */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  /* line 773, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="one wide large screen"].column,
+  .ui.grid > .column.row > [class*="one wide large screen"].column,
+  .ui.grid > [class*="one wide large screen"].column,
+  .ui.column.grid > [class*="one wide large screen"].column {
+    width: 6.25% !important;
+  }
+
+  /* line 779, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="two wide large screen"].column,
+  .ui.grid > .column.row > [class*="two wide large screen"].column,
+  .ui.grid > [class*="two wide large screen"].column,
+  .ui.column.grid > [class*="two wide large screen"].column {
+    width: 12.5% !important;
+  }
+
+  /* line 785, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="three wide large screen"].column,
+  .ui.grid > .column.row > [class*="three wide large screen"].column,
+  .ui.grid > [class*="three wide large screen"].column,
+  .ui.column.grid > [class*="three wide large screen"].column {
+    width: 18.75% !important;
+  }
+
+  /* line 791, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="four wide large screen"].column,
+  .ui.grid > .column.row > [class*="four wide large screen"].column,
+  .ui.grid > [class*="four wide large screen"].column,
+  .ui.column.grid > [class*="four wide large screen"].column {
+    width: 25% !important;
+  }
+
+  /* line 797, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="five wide large screen"].column,
+  .ui.grid > .column.row > [class*="five wide large screen"].column,
+  .ui.grid > [class*="five wide large screen"].column,
+  .ui.column.grid > [class*="five wide large screen"].column {
+    width: 31.25% !important;
+  }
+
+  /* line 803, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="six wide large screen"].column,
+  .ui.grid > .column.row > [class*="six wide large screen"].column,
+  .ui.grid > [class*="six wide large screen"].column,
+  .ui.column.grid > [class*="six wide large screen"].column {
+    width: 37.5% !important;
+  }
+
+  /* line 809, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="seven wide large screen"].column,
+  .ui.grid > .column.row > [class*="seven wide large screen"].column,
+  .ui.grid > [class*="seven wide large screen"].column,
+  .ui.column.grid > [class*="seven wide large screen"].column {
+    width: 43.75% !important;
+  }
+
+  /* line 815, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eight wide large screen"].column,
+  .ui.grid > .column.row > [class*="eight wide large screen"].column,
+  .ui.grid > [class*="eight wide large screen"].column,
+  .ui.column.grid > [class*="eight wide large screen"].column {
+    width: 50% !important;
+  }
+
+  /* line 821, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="nine wide large screen"].column,
+  .ui.grid > .column.row > [class*="nine wide large screen"].column,
+  .ui.grid > [class*="nine wide large screen"].column,
+  .ui.column.grid > [class*="nine wide large screen"].column {
+    width: 56.25% !important;
+  }
+
+  /* line 827, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="ten wide large screen"].column,
+  .ui.grid > .column.row > [class*="ten wide large screen"].column,
+  .ui.grid > [class*="ten wide large screen"].column,
+  .ui.column.grid > [class*="ten wide large screen"].column {
+    width: 62.5% !important;
+  }
+
+  /* line 833, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eleven wide large screen"].column,
+  .ui.grid > .column.row > [class*="eleven wide large screen"].column,
+  .ui.grid > [class*="eleven wide large screen"].column,
+  .ui.column.grid > [class*="eleven wide large screen"].column {
+    width: 68.75% !important;
+  }
+
+  /* line 839, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="twelve wide large screen"].column,
+  .ui.grid > .column.row > [class*="twelve wide large screen"].column,
+  .ui.grid > [class*="twelve wide large screen"].column,
+  .ui.column.grid > [class*="twelve wide large screen"].column {
+    width: 75% !important;
+  }
+
+  /* line 845, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="thirteen wide large screen"].column,
+  .ui.grid > .column.row > [class*="thirteen wide large screen"].column,
+  .ui.grid > [class*="thirteen wide large screen"].column,
+  .ui.column.grid > [class*="thirteen wide large screen"].column {
+    width: 81.25% !important;
+  }
+
+  /* line 851, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fourteen wide large screen"].column,
+  .ui.grid > .column.row > [class*="fourteen wide large screen"].column,
+  .ui.grid > [class*="fourteen wide large screen"].column,
+  .ui.column.grid > [class*="fourteen wide large screen"].column {
+    width: 87.5% !important;
+  }
+
+  /* line 857, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fifteen wide large screen"].column,
+  .ui.grid > .column.row > [class*="fifteen wide large screen"].column,
+  .ui.grid > [class*="fifteen wide large screen"].column,
+  .ui.column.grid > [class*="fifteen wide large screen"].column {
+    width: 93.75% !important;
+  }
+
+  /* line 863, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="sixteen wide large screen"].column,
+  .ui.grid > .column.row > [class*="sixteen wide large screen"].column,
+  .ui.grid > [class*="sixteen wide large screen"].column,
+  .ui.column.grid > [class*="sixteen wide large screen"].column {
+    width: 100% !important;
+  }
+}
+/* Widescreen Sizing Combinations */
+@media only screen and (min-width: 1920px) {
+  /* line 873, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="one wide widescreen"].column,
+  .ui.grid > .column.row > [class*="one wide widescreen"].column,
+  .ui.grid > [class*="one wide widescreen"].column,
+  .ui.column.grid > [class*="one wide widescreen"].column {
+    width: 6.25% !important;
+  }
+
+  /* line 879, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="two wide widescreen"].column,
+  .ui.grid > .column.row > [class*="two wide widescreen"].column,
+  .ui.grid > [class*="two wide widescreen"].column,
+  .ui.column.grid > [class*="two wide widescreen"].column {
+    width: 12.5% !important;
+  }
+
+  /* line 885, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="three wide widescreen"].column,
+  .ui.grid > .column.row > [class*="three wide widescreen"].column,
+  .ui.grid > [class*="three wide widescreen"].column,
+  .ui.column.grid > [class*="three wide widescreen"].column {
+    width: 18.75% !important;
+  }
+
+  /* line 891, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="four wide widescreen"].column,
+  .ui.grid > .column.row > [class*="four wide widescreen"].column,
+  .ui.grid > [class*="four wide widescreen"].column,
+  .ui.column.grid > [class*="four wide widescreen"].column {
+    width: 25% !important;
+  }
+
+  /* line 897, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="five wide widescreen"].column,
+  .ui.grid > .column.row > [class*="five wide widescreen"].column,
+  .ui.grid > [class*="five wide widescreen"].column,
+  .ui.column.grid > [class*="five wide widescreen"].column {
+    width: 31.25% !important;
+  }
+
+  /* line 903, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="six wide widescreen"].column,
+  .ui.grid > .column.row > [class*="six wide widescreen"].column,
+  .ui.grid > [class*="six wide widescreen"].column,
+  .ui.column.grid > [class*="six wide widescreen"].column {
+    width: 37.5% !important;
+  }
+
+  /* line 909, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="seven wide widescreen"].column,
+  .ui.grid > .column.row > [class*="seven wide widescreen"].column,
+  .ui.grid > [class*="seven wide widescreen"].column,
+  .ui.column.grid > [class*="seven wide widescreen"].column {
+    width: 43.75% !important;
+  }
+
+  /* line 915, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eight wide widescreen"].column,
+  .ui.grid > .column.row > [class*="eight wide widescreen"].column,
+  .ui.grid > [class*="eight wide widescreen"].column,
+  .ui.column.grid > [class*="eight wide widescreen"].column {
+    width: 50% !important;
+  }
+
+  /* line 921, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="nine wide widescreen"].column,
+  .ui.grid > .column.row > [class*="nine wide widescreen"].column,
+  .ui.grid > [class*="nine wide widescreen"].column,
+  .ui.column.grid > [class*="nine wide widescreen"].column {
+    width: 56.25% !important;
+  }
+
+  /* line 927, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="ten wide widescreen"].column,
+  .ui.grid > .column.row > [class*="ten wide widescreen"].column,
+  .ui.grid > [class*="ten wide widescreen"].column,
+  .ui.column.grid > [class*="ten wide widescreen"].column {
+    width: 62.5% !important;
+  }
+
+  /* line 933, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="eleven wide widescreen"].column,
+  .ui.grid > .column.row > [class*="eleven wide widescreen"].column,
+  .ui.grid > [class*="eleven wide widescreen"].column,
+  .ui.column.grid > [class*="eleven wide widescreen"].column {
+    width: 68.75% !important;
+  }
+
+  /* line 939, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="twelve wide widescreen"].column,
+  .ui.grid > .column.row > [class*="twelve wide widescreen"].column,
+  .ui.grid > [class*="twelve wide widescreen"].column,
+  .ui.column.grid > [class*="twelve wide widescreen"].column {
+    width: 75% !important;
+  }
+
+  /* line 945, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="thirteen wide widescreen"].column,
+  .ui.grid > .column.row > [class*="thirteen wide widescreen"].column,
+  .ui.grid > [class*="thirteen wide widescreen"].column,
+  .ui.column.grid > [class*="thirteen wide widescreen"].column {
+    width: 81.25% !important;
+  }
+
+  /* line 951, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fourteen wide widescreen"].column,
+  .ui.grid > .column.row > [class*="fourteen wide widescreen"].column,
+  .ui.grid > [class*="fourteen wide widescreen"].column,
+  .ui.column.grid > [class*="fourteen wide widescreen"].column {
+    width: 87.5% !important;
+  }
+
+  /* line 957, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="fifteen wide widescreen"].column,
+  .ui.grid > .column.row > [class*="fifteen wide widescreen"].column,
+  .ui.grid > [class*="fifteen wide widescreen"].column,
+  .ui.column.grid > [class*="fifteen wide widescreen"].column {
+    width: 93.75% !important;
+  }
+
+  /* line 963, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .row > [class*="sixteen wide widescreen"].column,
+  .ui.grid > .column.row > [class*="sixteen wide widescreen"].column,
+  .ui.grid > [class*="sixteen wide widescreen"].column,
+  .ui.column.grid > [class*="sixteen wide widescreen"].column {
+    width: 100% !important;
+  }
+}
+/*----------------------
+        Centered
+-----------------------*/
+/* line 975, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.centered.grid,
+.ui.centered.grid > .row,
+.ui.grid > .centered.row {
+  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* line 984, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.centered.grid > .column:not(.aligned):not(.row),
+.ui.centered.grid > .row > .column:not(.aligned),
+.ui.grid .centered.row > .column:not(.aligned) {
+  text-align: left;
+}
+
+/* line 989, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .centered.column,
+.ui.grid > .row > .centered.column {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*----------------------
+        Relaxed
+-----------------------*/
+/* line 1000, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.relaxed.grid > .column:not(.row),
+.ui.relaxed.grid > .row > .column,
+.ui.grid > .relaxed.row > .column {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* line 1006, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="very relaxed"].grid > .column:not(.row),
+.ui[class*="very relaxed"].grid > .row > .column,
+.ui.grid > [class*="very relaxed"].row > .column {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* Coupling with UI Divider */
+/* line 1014, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.relaxed.grid .row + .ui.divider,
+.ui.grid .relaxed.row + .ui.divider {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* line 1019, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="very relaxed"].grid .row + .ui.divider,
+.ui.grid [class*="very relaxed"].row + .ui.divider {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+/*----------------------
+        Padded
+-----------------------*/
+/* line 1029, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.padded.grid:not(.vertically):not(.horizontally) {
+  margin: 0em !important;
+}
+
+/* line 1032, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+[class*="horizontally padded"].ui.grid {
+  margin-left: 0em !important;
+  margin-right: 0em !important;
+}
+
+/* line 1036, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+[class*="vertically padded"].ui.grid {
+  margin-top: 0em !important;
+  margin-bottom: 0em !important;
+}
+
+/*----------------------
+       "Floated"
+-----------------------*/
+/* line 1045, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid [class*="left floated"].column {
+  margin-right: auto;
+}
+
+/* line 1048, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid [class*="right floated"].column {
+  margin-left: auto;
+}
+
+/*----------------------
+        Divided
+-----------------------*/
+/* line 1056, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
+.ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
+}
+
+/* Swap from padding to margin on columns to have dividers align */
+/* line 1062, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="vertically divided"].grid > .column:not(.row),
+.ui[class*="vertically divided"].grid > .row > .column {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+/* line 1069, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="vertically divided"].grid > .row {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+/* No divider on first column on row */
+/* line 1075, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.divided.grid:not([class*="vertically divided"]) > .column:first-child,
+.ui.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+  box-shadow: none;
+}
+
+/* Divided Row */
+/* line 1081, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .divided.row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
+}
+
+/* line 1084, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .divided.row > .column:first-child {
+  box-shadow: none;
+}
+
+/* Vertically Divided */
+/* line 1089, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="vertically divided"].grid > .row {
+  position: relative;
+}
+
+/* line 1092, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="vertically divided"].grid > .row:before {
+  position: absolute;
+  content: "";
+  top: 0em;
+  left: 0px;
+  width: calc(100% -  2rem );
+  height: 1px;
+  margin: 0% 1rem;
+  box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
+}
+
+/* Padded Horizontally Divided */
+/* line 1104, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+[class*="horizontally padded"].ui.divided.grid,
+.ui.padded.divided.grid:not(.vertically):not(.horizontally) {
+  width: 100%;
+}
+
+/* First Row Vertically Divided */
+/* line 1110, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="vertically divided"].grid > .row:first-child:before {
+  box-shadow: none;
+}
+
+/* Inverted Divided */
+/* line 1115, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.inverted.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
+.ui.inverted.divided.grid:not([class*="vertically divided"]) > .row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* line 1119, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.inverted.divided.grid:not([class*="vertically divided"]) > .column:not(.row):first-child,
+.ui.inverted.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+  box-shadow: none;
+}
+
+/* line 1123, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.inverted[class*="vertically divided"].grid > .row:before {
+  box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* Relaxed */
+/* line 1128, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.relaxed[class*="vertically divided"].grid > .row:before {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  width: calc(100% -  3rem );
+}
+
+/* line 1133, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="very relaxed"][class*="vertically divided"].grid > .row:before {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  width: calc(100% -  5rem );
+}
+
+/*----------------------
+         Celled
+-----------------------*/
+/* line 1143, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.celled.grid {
+  width: 100%;
+  margin: 1em 0em;
+  box-shadow: 0px 0px 0px 1px #d4d4d5;
+}
+
+/* line 1148, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.celled.grid > .row {
+  width: 100% !important;
+  margin: 0em;
+  padding: 0em;
+  box-shadow: 0px -1px 0px 0px #d4d4d5;
+}
+
+/* line 1154, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column {
+  box-shadow: -1px 0px 0px 0px #d4d4d5;
+}
+
+/* line 1158, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.celled.grid > .column:first-child,
+.ui.celled.grid > .row > .column:first-child {
+  box-shadow: none;
+}
+
+/* line 1162, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column {
+  padding: 1em;
+}
+
+/* line 1166, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.relaxed.celled.grid > .column:not(.row),
+.ui.relaxed.celled.grid > .row > .column {
+  padding: 1.5em;
+}
+
+/* line 1170, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="very relaxed"].celled.grid > .column:not(.row),
+.ui[class*="very relaxed"].celled.grid > .row > .column {
+  padding: 2em;
+}
+
+/* Internally Celled */
+/* line 1176, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="internally celled"].grid {
+  box-shadow: none;
+  margin: 0em;
+}
+
+/* line 1180, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="internally celled"].grid > .row:first-child {
+  box-shadow: none;
+}
+
+/* line 1183, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="internally celled"].grid > .row > .column:first-child {
+  box-shadow: none;
+}
+
+/*----------------------
+   Vertically Aligned
+-----------------------*/
+/* Top Aligned */
+/* line 1193, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="top aligned"].grid > .column:not(.row),
+.ui.grid > [class*="top aligned"].row > .column,
+.ui.grid > [class*="top aligned"].column:not(.row),
+.ui.grid > .row > [class*="top aligned"].column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  vertical-align: top;
+  -webkit-align-self: flex-start !important;
+  -ms-flex-item-align: start !important;
+  align-self: flex-start !important;
+}
+
+/* Middle Aligned */
+/* line 1209, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="middle aligned"].grid > .column:not(.row),
+.ui.grid > [class*="middle aligned"].row > .column,
+.ui.grid > [class*="middle aligned"].column:not(.row),
+.ui.grid > .row > [class*="middle aligned"].column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  vertical-align: middle;
+  -webkit-align-self: center !important;
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
+}
+
+/* Bottom Aligned */
+/* line 1225, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="bottom aligned"].grid > .column:not(.row),
+.ui.grid > [class*="bottom aligned"].row > .column,
+.ui.grid > [class*="bottom aligned"].column:not(.row),
+.ui.grid > .row > [class*="bottom aligned"].column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  vertical-align: bottom;
+  -webkit-align-self: flex-end !important;
+  -ms-flex-item-align: end !important;
+  align-self: flex-end !important;
+}
+
+/* Stretched */
+/* line 1241, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.stretched.grid > .row > .column,
+.ui.stretched.grid > .column,
+.ui.grid > .stretched.row > .column,
+.ui.grid > .stretched.column:not(.row),
+.ui.grid > .row > .stretched.column {
+  display: -webkit-inline-box !important;
+  display: -webkit-inline-flex !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 1259, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.stretched.grid > .row > .column > *,
+.ui.stretched.grid > .column > *,
+.ui.grid > .stretched.row > .column > *,
+.ui.grid > .stretched.column:not(.row) > *,
+.ui.grid > .row > .stretched.column > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/*----------------------
+  Horizontally Centered
+-----------------------*/
+/* Left Aligned */
+/* line 1276, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="left aligned"].grid .column,
+.ui.grid > [class*="left aligned"].row > .column,
+.ui.grid > [class*="left aligned"].column.column,
+.ui.grid > .row > [class*="left aligned"].column {
+  text-align: left;
+  -webkit-align-self: inherit;
+  -ms-flex-item-align: inherit;
+  align-self: inherit;
+}
+
+/* Center Aligned */
+/* line 1287, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="center aligned"].grid .column,
+.ui.grid > [class*="center aligned"].row > .column,
+.ui.grid > [class*="center aligned"].column.column,
+.ui.grid > .row > [class*="center aligned"].column {
+  text-align: center;
+  -webkit-align-self: inherit;
+  -ms-flex-item-align: inherit;
+  align-self: inherit;
+}
+
+/* line 1296, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="center aligned"].grid {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* Right Aligned */
+/* line 1304, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="right aligned"].grid .column,
+.ui.grid > [class*="right aligned"].row > .column,
+.ui.grid > [class*="right aligned"].column.column,
+.ui.grid > .row > [class*="right aligned"].column {
+  text-align: right;
+  -webkit-align-self: inherit;
+  -ms-flex-item-align: inherit;
+  align-self: inherit;
+}
+
+/* Justified */
+/* line 1315, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.justified.grid,
+.ui.justified.grid > .row > .column,
+.ui.justified.grid > .column,
+.ui.grid .justified.column,
+.ui.grid > .justified.row > .column {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* line 1326, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid .justified.column {
+  text-align: justify !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  hyphens: auto !important;
+}
+
+/*----------------------
+         Colored
+-----------------------*/
+/* line 1338, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .row > .red.column,
+.ui.grid > .row > .orange.column,
+.ui.grid > .row > .yellow.column,
+.ui.grid > .row > .olive.column,
+.ui.grid > .row > .green.column,
+.ui.grid > .row > .teal.column,
+.ui.grid > .row > .blue.column,
+.ui.grid > .row > .violet.column,
+.ui.grid > .row > .purple.column,
+.ui.grid > .row > .pink.column,
+.ui.grid > .row > .brown.column,
+.ui.grid > .row > .grey.column,
+.ui.grid > .row > .black.column {
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Red */
+/* line 1358, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .red.row,
+.ui.grid > .red.column,
+.ui.grid > .row > .red.column {
+  background-color: #db2828 !important;
+  color: #ffffff;
+}
+
+/* Orange */
+/* line 1366, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .orange.row,
+.ui.grid > .orange.column,
+.ui.grid > .row > .orange.column {
+  background-color: #f2711c !important;
+  color: #ffffff;
+}
+
+/* Yellow */
+/* line 1374, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .yellow.row,
+.ui.grid > .yellow.column,
+.ui.grid > .row > .yellow.column {
+  background-color: #fbbd08 !important;
+  color: #ffffff;
+}
+
+/* Olive */
+/* line 1382, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .olive.row,
+.ui.grid > .olive.column,
+.ui.grid > .row > .olive.column {
+  background-color: #b5cc18 !important;
+  color: #ffffff;
+}
+
+/* Green */
+/* line 1390, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .green.row,
+.ui.grid > .green.column,
+.ui.grid > .row > .green.column {
+  background-color: #21ba45 !important;
+  color: #ffffff;
+}
+
+/* Teal */
+/* line 1398, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .teal.row,
+.ui.grid > .teal.column,
+.ui.grid > .row > .teal.column {
+  background-color: #00b5ad !important;
+  color: #ffffff;
+}
+
+/* Blue */
+/* line 1406, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .blue.row,
+.ui.grid > .blue.column,
+.ui.grid > .row > .blue.column {
+  background-color: #2185d0 !important;
+  color: #ffffff;
+}
+
+/* Violet */
+/* line 1414, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .violet.row,
+.ui.grid > .violet.column,
+.ui.grid > .row > .violet.column {
+  background-color: #6435c9 !important;
+  color: #ffffff;
+}
+
+/* Purple */
+/* line 1422, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .purple.row,
+.ui.grid > .purple.column,
+.ui.grid > .row > .purple.column {
+  background-color: #a333c8 !important;
+  color: #ffffff;
+}
+
+/* Pink */
+/* line 1430, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .pink.row,
+.ui.grid > .pink.column,
+.ui.grid > .row > .pink.column {
+  background-color: #e03997 !important;
+  color: #ffffff;
+}
+
+/* Brown */
+/* line 1438, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .brown.row,
+.ui.grid > .brown.column,
+.ui.grid > .row > .brown.column {
+  background-color: #a5673f !important;
+  color: #ffffff;
+}
+
+/* Grey */
+/* line 1446, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .grey.row,
+.ui.grid > .grey.column,
+.ui.grid > .row > .grey.column {
+  background-color: #767676 !important;
+  color: #ffffff;
+}
+
+/* Black */
+/* line 1454, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui.grid > .black.row,
+.ui.grid > .black.column,
+.ui.grid > .row > .black.column {
+  background-color: #1b1c1d !important;
+  color: #ffffff;
+}
+
+/*----------------------
+      Equal Width
+-----------------------*/
+/* line 1465, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="equal width"].grid > .column:not(.row),
+.ui[class*="equal width"].grid > .row > .column,
+.ui.grid > [class*="equal width"].row > .column {
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/* line 1474, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+.ui[class*="equal width"].grid > .wide.column,
+.ui[class*="equal width"].grid > .row > .wide.column,
+.ui.grid > [class*="equal width"].row > .wide.column {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+}
+
+/*----------------------
+        Reverse
+-----------------------*/
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  /* line 1490, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile reversed"].grid,
+  .ui[class*="mobile reversed"].grid > .row,
+  .ui.grid > [class*="mobile reversed"].row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  /* line 1499, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile vertically reversed"].grid,
+  .ui.stackable[class*="mobile reversed"] {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  /* Divided Reversed */
+  /* line 1509, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
+  .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+    box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* line 1513, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .column:last-child,
+  .ui[class*="mobile reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:last-child {
+    box-shadow: none;
+  }
+
+  /* Vertically Divided Reversed */
+  /* line 1519, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid[class*="vertically divided"][class*="mobile vertically reversed"] > .row:first-child:before {
+    box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* line 1522, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid[class*="vertically divided"][class*="mobile vertically reversed"] > .row:last-child:before {
+    box-shadow: none;
+  }
+
+  /* Celled Reversed */
+  /* line 1527, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile reversed"].celled.grid > .row > .column:first-child {
+    box-shadow: -1px 0px 0px 0px #d4d4d5;
+  }
+
+  /* line 1530, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile reversed"].celled.grid > .row > .column:last-child {
+    box-shadow: none;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 1537, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet reversed"].grid,
+  .ui[class*="tablet reversed"].grid > .row,
+  .ui.grid > [class*="tablet reversed"].row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  /* line 1546, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet vertically reversed"].grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  /* Divided Reversed */
+  /* line 1555, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
+  .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+    box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* line 1559, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .column:last-child,
+  .ui[class*="tablet reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:last-child {
+    box-shadow: none;
+  }
+
+  /* Vertically Divided Reversed */
+  /* line 1565, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid[class*="vertically divided"][class*="tablet vertically reversed"] > .row:first-child:before {
+    box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* line 1568, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid[class*="vertically divided"][class*="tablet vertically reversed"] > .row:last-child:before {
+    box-shadow: none;
+  }
+
+  /* Celled Reversed */
+  /* line 1573, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet reversed"].celled.grid > .row > .column:first-child {
+    box-shadow: -1px 0px 0px 0px #d4d4d5;
+  }
+
+  /* line 1576, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet reversed"].celled.grid > .row > .column:last-child {
+    box-shadow: none;
+  }
+}
+/* Computer */
+@media only screen and (min-width: 992px) {
+  /* line 1583, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer reversed"].grid,
+  .ui[class*="computer reversed"].grid > .row,
+  .ui.grid > [class*="computer reversed"].row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  /* line 1592, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer vertically reversed"].grid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  /* Divided Reversed */
+  /* line 1601, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .column:first-child,
+  .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+    box-shadow: -1px 0px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* line 1605, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .column:last-child,
+  .ui[class*="computer reversed"].divided.grid:not([class*="vertically divided"]) > .row > .column:last-child {
+    box-shadow: none;
+  }
+
+  /* Vertically Divided Reversed */
+  /* line 1611, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid[class*="vertically divided"][class*="computer vertically reversed"] > .row:first-child:before {
+    box-shadow: 0px -1px 0px 0px rgba(34, 36, 38, 0.15);
+  }
+
+  /* line 1614, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid[class*="vertically divided"][class*="computer vertically reversed"] > .row:last-child:before {
+    box-shadow: none;
+  }
+
+  /* Celled Reversed */
+  /* line 1619, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer reversed"].celled.grid > .row > .column:first-child {
+    box-shadow: -1px 0px 0px 0px #d4d4d5;
+  }
+
+  /* line 1622, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer reversed"].celled.grid > .row > .column:last-child {
+    box-shadow: none;
+  }
+}
+/*-------------------
+      Doubling
+--------------------*/
+/* Tablet Only */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 1634, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.doubling.grid {
+    width: auto;
+  }
+
+  /* line 1637, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .doubling.row,
+  .ui.doubling.grid > .row {
+    margin: 0em !important;
+    padding: 0em !important;
+  }
+
+  /* line 1642, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .doubling.row > .column,
+  .ui.doubling.grid > .row > .column {
+    display: inline-block !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    box-shadow: none !important;
+    margin: 0em;
+  }
+
+  /* line 1650, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="two column"].doubling.grid > .row > .column,
+  .ui[class*="two column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="two column"].doubling.row.row > .column {
+    width: 100% !important;
+  }
+
+  /* line 1655, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="three column"].doubling.grid > .row > .column,
+  .ui[class*="three column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="three column"].doubling.row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1660, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="four column"].doubling.grid > .row > .column,
+  .ui[class*="four column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="four column"].doubling.row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1665, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="five column"].doubling.grid > .row > .column,
+  .ui[class*="five column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="five column"].doubling.row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1670, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="six column"].doubling.grid > .row > .column,
+  .ui[class*="six column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="six column"].doubling.row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1675, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="seven column"].doubling.grid > .row > .column,
+  .ui[class*="seven column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="seven column"].doubling.row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1680, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="eight column"].doubling.grid > .row > .column,
+  .ui[class*="eight column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="eight column"].doubling.row.row > .column {
+    width: 25% !important;
+  }
+
+  /* line 1685, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="nine column"].doubling.grid > .row > .column,
+  .ui[class*="nine column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="nine column"].doubling.row.row > .column {
+    width: 25% !important;
+  }
+
+  /* line 1690, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="ten column"].doubling.grid > .row > .column,
+  .ui[class*="ten column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="ten column"].doubling.row.row > .column {
+    width: 20% !important;
+  }
+
+  /* line 1695, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="eleven column"].doubling.grid > .row > .column,
+  .ui[class*="eleven column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="eleven column"].doubling.row.row > .column {
+    width: 20% !important;
+  }
+
+  /* line 1700, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="twelve column"].doubling.grid > .row > .column,
+  .ui[class*="twelve column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="twelve column"].doubling.row.row > .column {
+    width: 16.66666667% !important;
+  }
+
+  /* line 1705, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="thirteen column"].doubling.grid > .row > .column,
+  .ui[class*="thirteen column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="thirteen column"].doubling.row.row > .column {
+    width: 16.66666667% !important;
+  }
+
+  /* line 1710, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="fourteen column"].doubling.grid > .row > .column,
+  .ui[class*="fourteen column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="fourteen column"].doubling.row.row > .column {
+    width: 14.28571429% !important;
+  }
+
+  /* line 1715, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="fifteen column"].doubling.grid > .row > .column,
+  .ui[class*="fifteen column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="fifteen column"].doubling.row.row > .column {
+    width: 14.28571429% !important;
+  }
+
+  /* line 1720, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="sixteen column"].doubling.grid > .row > .column,
+  .ui[class*="sixteen column"].doubling.grid > .column:not(.row),
+  .ui.grid > [class*="sixteen column"].doubling.row.row > .column {
+    width: 12.5% !important;
+  }
+}
+/* Mobily Only */
+@media only screen and (max-width: 767px) {
+  /* line 1729, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .doubling.row,
+  .ui.doubling.grid > .row {
+    margin: 0em !important;
+    padding: 0em !important;
+  }
+
+  /* line 1734, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid > .doubling.row > .column,
+  .ui.doubling.grid > .row > .column {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin: 0em !important;
+    box-shadow: none !important;
+  }
+
+  /* line 1741, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="two column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="two column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="two column"].doubling:not(.stackable).row.row > .column {
+    width: 100% !important;
+  }
+
+  /* line 1746, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="three column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="three column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="three column"].doubling:not(.stackable).row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1751, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="four column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="four column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="four column"].doubling:not(.stackable).row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1756, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="five column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="five column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="five column"].doubling:not(.stackable).row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1761, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="six column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="six column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="six column"].doubling:not(.stackable).row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1766, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="seven column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="seven column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="seven column"].doubling:not(.stackable).row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1771, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="eight column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="eight column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="eight column"].doubling:not(.stackable).row.row > .column {
+    width: 50% !important;
+  }
+
+  /* line 1776, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="nine column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="nine column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="nine column"].doubling:not(.stackable).row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1781, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="ten column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="ten column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="ten column"].doubling:not(.stackable).row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1786, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="eleven column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="eleven column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="eleven column"].doubling:not(.stackable).row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1791, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="twelve column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="twelve column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="twelve column"].doubling:not(.stackable).row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1796, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="thirteen column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="thirteen column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="thirteen column"].doubling:not(.stackable).row.row > .column {
+    width: 33.33333333% !important;
+  }
+
+  /* line 1801, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="fourteen column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="fourteen column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="fourteen column"].doubling:not(.stackable).row.row > .column {
+    width: 25% !important;
+  }
+
+  /* line 1806, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="fifteen column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="fifteen column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="fifteen column"].doubling:not(.stackable).row.row > .column {
+    width: 25% !important;
+  }
+
+  /* line 1811, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="sixteen column"].doubling:not(.stackable).grid > .row > .column,
+  .ui[class*="sixteen column"].doubling:not(.stackable).grid > .column:not(.row),
+  .ui.grid > [class*="sixteen column"].doubling:not(.stackable).row.row > .column {
+    width: 25% !important;
+  }
+}
+/*-------------------
+      Stackable
+--------------------*/
+@media only screen and (max-width: 767px) {
+  /* line 1823, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.grid {
+    width: auto;
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+  }
+
+  /* line 1828, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.grid > .row > .wide.column,
+  .ui.stackable.grid > .wide.column,
+  .ui.stackable.grid > .column.grid > .column,
+  .ui.stackable.grid > .column.row > .column,
+  .ui.stackable.grid > .row > .column,
+  .ui.stackable.grid > .column:not(.row),
+  .ui.grid > .stackable.stackable.row > .column {
+    width: 100% !important;
+    margin: 0em 0em !important;
+    box-shadow: none !important;
+    padding: 1rem 1rem !important;
+  }
+
+  /* line 1840, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.grid:not(.vertically) > .row {
+    margin: 0em;
+    padding: 0em;
+  }
+
+  /* Coupling */
+  /* line 1846, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.container > .ui.stackable.grid > .column,
+  .ui.container > .ui.stackable.grid > .row > .column {
+    padding-left: 0em !important;
+    padding-right: 0em !important;
+  }
+
+  /* Don't pad inside segment or nested grid */
+  /* line 1853, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.grid .ui.stackable.grid,
+  .ui.segment:not(.vertical) .ui.stackable.page.grid {
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+  }
+
+  /* Divided Stackable */
+  /* line 1860, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.divided.grid > .row:first-child > .column:first-child,
+  .ui.stackable.celled.grid > .row:first-child > .column:first-child,
+  .ui.stackable.divided.grid > .column:not(.row):first-child,
+  .ui.stackable.celled.grid > .column:not(.row):first-child {
+    border-top: none !important;
+  }
+
+  /* line 1866, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.inverted.stackable.celled.grid > .column:not(.row),
+  .ui.inverted.stackable.divided.grid > .column:not(.row),
+  .ui.inverted.stackable.celled.grid > .row > .column,
+  .ui.inverted.stackable.divided.grid > .row > .column {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* line 1872, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.celled.grid > .column:not(.row),
+  .ui.stackable.divided:not(.vertically).grid > .column:not(.row),
+  .ui.stackable.celled.grid > .row > .column,
+  .ui.stackable.divided:not(.vertically).grid > .row > .column {
+    border-top: 1px solid rgba(34, 36, 38, 0.15);
+    box-shadow: none !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* line 1881, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.celled.grid > .row {
+    box-shadow: none !important;
+  }
+
+  /* line 1884, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.stackable.divided:not(.vertically).grid > .column:not(.row),
+  .ui.stackable.divided:not(.vertically).grid > .row > .column {
+    padding-left: 0em !important;
+    padding-right: 0em !important;
+  }
+}
+/*----------------------
+     Only (Device)
+-----------------------*/
+/* These include arbitrary class repetitions for forced specificity */
+/* Mobile Only Hide */
+@media only screen and (max-width: 767px) {
+  /* line 1900, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui.tablet:not(.mobile).only.grid.grid.grid,
+  .ui.grid.grid.grid > [class*="tablet only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="tablet only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="tablet only"].column:not(.mobile) {
+    display: none !important;
+  }
+
+  /* line 1906, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer only"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="computer only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="computer only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="computer only"].column:not(.mobile) {
+    display: none !important;
+  }
+
+  /* line 1912, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="large screen only"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
+    display: none !important;
+  }
+
+  /* line 1918, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
+    display: none !important;
+  }
+}
+/* Tablet Only Hide */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 1928, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile only"].grid.grid.grid:not(.tablet),
+  .ui.grid.grid.grid > [class*="mobile only"].row:not(.tablet),
+  .ui.grid.grid.grid > [class*="mobile only"].column:not(.tablet),
+  .ui.grid.grid.grid > .row > [class*="mobile only"].column:not(.tablet) {
+    display: none !important;
+  }
+
+  /* line 1934, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="computer only"].grid.grid.grid:not(.tablet),
+  .ui.grid.grid.grid > [class*="computer only"].row:not(.tablet),
+  .ui.grid.grid.grid > [class*="computer only"].column:not(.tablet),
+  .ui.grid.grid.grid > .row > [class*="computer only"].column:not(.tablet) {
+    display: none !important;
+  }
+
+  /* line 1940, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="large screen only"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
+    display: none !important;
+  }
+
+  /* line 1946, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
+    display: none !important;
+  }
+}
+/* Computer Only Hide */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  /* line 1956, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile only"].grid.grid.grid:not(.computer),
+  .ui.grid.grid.grid > [class*="mobile only"].row:not(.computer),
+  .ui.grid.grid.grid > [class*="mobile only"].column:not(.computer),
+  .ui.grid.grid.grid > .row > [class*="mobile only"].column:not(.computer) {
+    display: none !important;
+  }
+
+  /* line 1962, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet only"].grid.grid.grid:not(.computer),
+  .ui.grid.grid.grid > [class*="tablet only"].row:not(.computer),
+  .ui.grid.grid.grid > [class*="tablet only"].column:not(.computer),
+  .ui.grid.grid.grid > .row > [class*="tablet only"].column:not(.computer) {
+    display: none !important;
+  }
+
+  /* line 1968, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="large screen only"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="large screen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
+    display: none !important;
+  }
+
+  /* line 1974, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
+    display: none !important;
+  }
+}
+/* Large Screen Only Hide */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  /* line 1984, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile only"].grid.grid.grid:not(.computer),
+  .ui.grid.grid.grid > [class*="mobile only"].row:not(.computer),
+  .ui.grid.grid.grid > [class*="mobile only"].column:not(.computer),
+  .ui.grid.grid.grid > .row > [class*="mobile only"].column:not(.computer) {
+    display: none !important;
+  }
+
+  /* line 1990, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet only"].grid.grid.grid:not(.computer),
+  .ui.grid.grid.grid > [class*="tablet only"].row:not(.computer),
+  .ui.grid.grid.grid > [class*="tablet only"].column:not(.computer),
+  .ui.grid.grid.grid > .row > [class*="tablet only"].column:not(.computer) {
+    display: none !important;
+  }
+
+  /* line 1996, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
+    display: none !important;
+  }
+}
+/* Widescreen Only Hide */
+@media only screen and (min-width: 1920px) {
+  /* line 2006, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="mobile only"].grid.grid.grid:not(.computer),
+  .ui.grid.grid.grid > [class*="mobile only"].row:not(.computer),
+  .ui.grid.grid.grid > [class*="mobile only"].column:not(.computer),
+  .ui.grid.grid.grid > .row > [class*="mobile only"].column:not(.computer) {
+    display: none !important;
+  }
+
+  /* line 2012, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/collections/_grid.scss */
+  .ui[class*="tablet only"].grid.grid.grid:not(.computer),
+  .ui.grid.grid.grid > [class*="tablet only"].row:not(.computer),
+  .ui.grid.grid.grid > [class*="tablet only"].column:not(.computer),
+  .ui.grid.grid.grid > .row > [class*="tablet only"].column:not(.computer) {
+    display: none !important;
+  }
+}
+/*******************************
+         Theme Overrides
+*******************************/
+/*******************************
+         Site Overrides
+*******************************/

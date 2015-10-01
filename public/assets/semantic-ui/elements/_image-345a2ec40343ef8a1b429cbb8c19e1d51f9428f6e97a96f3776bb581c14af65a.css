@@ -1,0 +1,328 @@
+/*!
+ * # Semantic UI 2.1.3 - Image
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+/*******************************
+             Image
+*******************************/
+/* line 18, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.image {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+/* line 25, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+img.ui.image {
+  display: block;
+}
+
+/* line 28, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.image svg,
+.ui.image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*******************************
+            States
+*******************************/
+/* line 40, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.hidden.images,
+.ui.hidden.image {
+  display: none;
+}
+
+/* line 44, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.disabled.images,
+.ui.disabled.image {
+  cursor: default;
+  opacity: 0.45;
+}
+
+/*******************************
+          Variations
+*******************************/
+/*--------------
+     Inline
+---------------*/
+/* line 60, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.inline.image,
+.ui.inline.image svg,
+.ui.inline.image img {
+  display: inline-block;
+}
+
+/*------------------
+  Vertical Aligned
+-------------------*/
+/* line 70, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.top.aligned.images .image,
+.ui.top.aligned.image,
+.ui.top.aligned.image svg,
+.ui.top.aligned.image img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* line 77, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.middle.aligned.images .image,
+.ui.middle.aligned.image,
+.ui.middle.aligned.image svg,
+.ui.middle.aligned.image img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 84, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.bottom.aligned.images .image,
+.ui.bottom.aligned.image,
+.ui.bottom.aligned.image svg,
+.ui.bottom.aligned.image img {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/*--------------
+     Rounded
+---------------*/
+/* line 96, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.rounded.images .image,
+.ui.rounded.image,
+.ui.rounded.images .image > *,
+.ui.rounded.image > * {
+  border-radius: 0.3125em;
+}
+
+/*--------------
+    Bordered
+---------------*/
+/* line 107, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.bordered.images .image,
+.ui.bordered.images img,
+.ui.bordered.images svg,
+.ui.bordered.image img,
+.ui.bordered.image svg,
+img.ui.bordered.image {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*--------------
+    Circular
+---------------*/
+/* line 120, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.circular.images,
+.ui.circular.image {
+  overflow: hidden;
+}
+
+/* line 124, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.circular.images .image,
+.ui.circular.image,
+.ui.circular.images .image > *,
+.ui.circular.image > * {
+  border-radius: 500rem;
+}
+
+/*--------------
+     Fluid
+---------------*/
+/* line 135, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.fluid.images,
+.ui.fluid.image,
+.ui.fluid.images img,
+.ui.fluid.images svg,
+.ui.fluid.image svg,
+.ui.fluid.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*--------------
+     Avatar
+---------------*/
+/* line 150, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.avatar.images .image,
+.ui.avatar.images img,
+.ui.avatar.images svg,
+.ui.avatar.image img,
+.ui.avatar.image svg,
+.ui.avatar.image {
+  margin-right: 0.25em;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  border-radius: 500rem;
+}
+
+/*-------------------
+       Spaced
+--------------------*/
+/* line 167, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.spaced.image {
+  display: inline-block !important;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/* line 172, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui[class*="left spaced"].image {
+  margin-left: 0.5em;
+  margin-right: 0em;
+}
+
+/* line 176, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui[class*="right spaced"].image {
+  margin-left: 0em;
+  margin-right: 0.5em;
+}
+
+/*-------------------
+       Floated
+--------------------*/
+/* line 185, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.floated.image,
+.ui.floated.images {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+/* line 191, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.right.floated.images,
+.ui.right.floated.image {
+  float: right;
+  margin-right: 0em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+/* line 198, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.floated.images:last-child,
+.ui.floated.image:last-child {
+  margin-bottom: 0em;
+}
+
+/* line 202, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.centered.images,
+.ui.centered.image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------
+     Sizes
+---------------*/
+/* line 212, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.mini.images .image,
+.ui.mini.images img,
+.ui.mini.images svg,
+.ui.mini.image {
+  width: 35px;
+  height: auto;
+  font-size: 0.71428571rem;
+}
+
+/* line 220, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.tiny.images .image,
+.ui.tiny.images img,
+.ui.tiny.images svg,
+.ui.tiny.image {
+  width: 80px;
+  height: auto;
+  font-size: 0.85714286rem;
+}
+
+/* line 228, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.small.images .image,
+.ui.small.images img,
+.ui.small.images svg,
+.ui.small.image {
+  width: 150px;
+  height: auto;
+  font-size: 0.92857143rem;
+}
+
+/* line 236, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.medium.images .image,
+.ui.medium.images img,
+.ui.medium.images svg,
+.ui.medium.image {
+  width: 300px;
+  height: auto;
+  font-size: 1rem;
+}
+
+/* line 244, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.large.images .image,
+.ui.large.images img,
+.ui.large.images svg,
+.ui.large.image {
+  width: 450px;
+  height: auto;
+  font-size: 1.14285714rem;
+}
+
+/* line 252, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.big.images .image,
+.ui.big.images img,
+.ui.big.images svg,
+.ui.big.image {
+  width: 600px;
+  height: auto;
+  font-size: 1.28571429rem;
+}
+
+/* line 260, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.huge.images .image,
+.ui.huge.images img,
+.ui.huge.images svg,
+.ui.huge.image {
+  width: 800px;
+  height: auto;
+  font-size: 1.42857143rem;
+}
+
+/* line 268, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.massive.images .image,
+.ui.massive.images img,
+.ui.massive.images svg,
+.ui.massive.image {
+  width: 960px;
+  height: auto;
+  font-size: 1.71428571rem;
+}
+
+/*******************************
+              Groups
+*******************************/
+/* line 282, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.images {
+  font-size: 0em;
+  margin: 0em -0.25rem 0rem;
+}
+
+/* line 286, /home/foradian/.rvm/gems/ruby-2.2.2/bundler/gems/semantic-ui-sass-e7ba26d24b90/app/assets/stylesheets/semantic-ui/elements/_image.scss */
+.ui.images .image,
+.ui.images img,
+.ui.images svg {
+  display: inline-block;
+  margin: 0em 0.25rem 0.5rem;
+}
+
+/*******************************
+         Theme Overrides
+*******************************/
+/*******************************
+         Site Overrides
+*******************************/

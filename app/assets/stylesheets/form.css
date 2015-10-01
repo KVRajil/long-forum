@@ -1,0 +1,47 @@
+.formcetre {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+.regerror , .alert.alert-danger{
+  color:red;
+}
+.ui.navbar{margin-top: -13px;}
+
+.newpost{
+  top:10%;
+  position: relative;
+}
+.ui.art input[type="text"]{
+  border: none;
+  padding: 0 0;
+
+}
+
+.expinput{
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  padding: 0.67861429em 1em;
+}
+
+
+body {
+  font-family:"Arial", Helvetic, sans-serif
+}
+
+
+
+
+
+
+
+.post-tag{
+    color: #3e6d8e;
+    font-size: 12px;
+    white-space: nowrap;
+    background: #e4edf4;
+    border: 1px solid #e4edf4;
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    border-radius: 0;
+
+}
