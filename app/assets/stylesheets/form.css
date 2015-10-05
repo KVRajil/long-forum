@@ -34,14 +34,19 @@ body {
 
 
 
-.post-tag{
-    color: #3e6d8e;
-    font-size: 12px;
-    white-space: nowrap;
-    background: #e4edf4;
-    border: 1px solid #e4edf4;
-    display: inline-block;
-    margin: 2px 2px 2px 0;
-    border-radius: 0;
+#invited{
+  color: green;
+}
 
+#padding{
+  padding-top: 30px;
+}
+
+.taglist{
+  padding-top: 20px;
+}
+
+
+.right_floated{
+  float: right;
 }

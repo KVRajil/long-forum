@@ -1,29 +1,30 @@
 
-
+<div id="padding"> </div>
 <div class="ui container">
-  <div class="ui segment">
-     <div class="ui huge header"><%= @article.title %></div>
+  <div class="ui main text container">
+     <div class="ui header"><%= @article.title %></div>
      <div class="ui clearing divider"></div>
-     <%= raw(@article.text) %>
-
-     <div class="actions">
+     <div class="ui fluid image">
+       <%= raw(@article.text) %>
+   </div>
+   <div class="taglist">
        <%  @article.tag_list.each do |t| %>
        <%=link_to t , tag_path(t) ,class: 'ui blue  label' %>
        <%end%>
-     </div>
-     <div class="ui horizontal statistic">
-      <div class="value" id = "vote_count">
-          <%= @article.reputation_for(:votes).to_i%>
-        </div>
-      <div class="label">
-        Votes
-      </div>
     </div>
 
 
     <% if current_user && !current_user.voted_for?(@article) %>
-      | <%= link_to "up", vote_article_path(@article, type: "up") , method: :post , :remote => true%>
-      | <%= link_to "down", vote_article_path(@article, type: "down"), method: :post  , :remote => true%>
+      <%= link_to ('<i class="large black thumbs outline up icon"></i>').html_safe, vote_article_path(@article, type: "up") , method: :post , :remote => true%>
+
+      <div class="ui mini horizontal statistic">
+       <div class="value" id = "vote_count">
+           <%= @article.reputation_for(:votes).to_i%>
+         </div>
+     </div>
+
+
+      <%= link_to ('<i class="large black thumbs outline down icon"></i>').html_safe, vote_article_path(@article, type: "down"), method: :post  , :remote => true%>
     <% end %>
 
 
@@ -46,14 +47,15 @@
 
 
     <% if @article.user_id == current_user.id %>
-      <%= link_to "Edit", edit_article_path(@article) %>
+      <%= link_to ('<i class="large black edit icon"></i>').html_safe, edit_article_path(@article) %>
 
 
-    <%= link_to 'Destroy', article_path(@article),
+    <%= link_to ('<i class="large red remove icon"></i>').html_safe, article_path(@article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
     <% end %>
-
+    <div class="ui header">Subposts</div>
+    <div class="ui clearing divider"></div>
     <div class="ui middle aligned divided list">
       <% @sub_articles.each do |sub_article| %>
         <div class="item">
@@ -61,14 +63,16 @@
         </div>
       <% end %>
     </div>
+
+
+
+    <div class="ui clearing divider"></div>
     <%= link_to 'create subpost' , articles_new_path(:parent_type => @article.id) %>
 
-    <div class="ui comments">
+    <div class="ui comments" id="addcomment">
         <%= render 'comments/comment' %>
         <%= render 'comments/form' %>
     </div>
 
-
-    <%= link_to 'Back', articles_path %>
 </div>
 </div>

@@ -1,0 +1,4 @@
+
+$("<div class='comment' id='new_comment_<%=@comment.id%>'></div>").insertBefore( "#cform" );
+$("#new_comment_<%=@comment.id%>").html('<%=j render 'show'%>');
+$("#comment_body").val('')

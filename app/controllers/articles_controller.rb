@@ -4,12 +4,12 @@ class ArticlesController < ApplicationController
   before_action :set_article_tags_to_gon,only:[:edit]
   before_filter :set_available_tags_to_gon, only: [:new, :edit, :show]
   respond_to :html, :js
+
   def new
     @parent_type =params[:parent_type]
     if  @parent_type.nil?
       @parent_type =0
     end
-
   end
 
   def create
@@ -21,31 +21,31 @@ class ArticlesController < ApplicationController
   end
 
   def index
-
     if params[:tag]
       @articles = Comment.tagged_with(params[:tag]).map { |comment| comment.article}
       @articles += Article.tagged_with(params[:tag])
       @articles.uniq!
-
     elsif params[:type] == 'public'
       @articles = Article.where(:visibility => 'public')
     elsif params[:type] == 'private'
-       @articles = Invite.where(:user_id => current_user.id , :invite_accepted => 'true').map { |invite| invite.article}
+      @articles = Invite.where(:user_id => current_user.id , :invite_accepted => 'true').map { |invite| invite.article}
     elsif params[:type] == 'my'
       @articles = Article.where(:user_id => current_user.id ) #, :visibility => 'public'
     elsif params[:type] == 'favorite'
-        @articles = current_user.favorite_articles
+      @articles = current_user.favorite_articles
+    elsif params[:type] == 'top'
+      @articles = Article.where(:visibility => 'public')
+      @articles = @articles.sort_by { |article| article.reputation_for(:votes).to_i }.reverse 
     else
       @articles = Article.where(:visibility => 'public')
     end
   end
 
   def show
-      @users = User.where("id NOT IN (?)",current_user)
+    @users = User.where("id NOT IN (?)",current_user)
       if @article.user_id == current_user.id || @article.visibility == "public" || Invite.where(:user_id => current_user.id , :article_id => @article.id ,:invite_accepted => 'true').present?
         @sub_articles = Article.where(:parent_type => @article.id)
         render 'show'
-
       else
         render :file => 'public/422.html'
       end
@@ -60,17 +60,14 @@ class ArticlesController < ApplicationController
   end
 
   def update
-
-      if @article.update(article_params)
-
-        if @article.visibility == 'public'
-
-          Invite.where(:article_id => @article.id).destroy_all
-        end
-        redirect_to @article
-      else
-        render 'edit'
+    if @article.update(article_params)
+      if @article.visibility == 'public'
+        Invite.where(:article_id => @article.id).destroy_all
       end
+      redirect_to @article
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -90,15 +87,14 @@ class ArticlesController < ApplicationController
   end
 
   def favorite
-      if  Favorite.where(:user_id => current_user.id , :article_id => @article.id).blank?
-        @favorite = Favorite.new
-        @favorite.article_id = @article.id
-        @favorite.user_id = current_user.id
-        @favorite.save
-      else
-          Favorite.where(:user_id => current_user.id , :article_id => @article.id).destroy_all
-      end
-
+    if  Favorite.where(:user_id => current_user.id , :article_id => @article.id).blank?
+      @favorite = Favorite.new
+      @favorite.article_id = @article.id
+      @favorite.user_id = current_user.id
+      @favorite.save
+    else
+        Favorite.where(:user_id => current_user.id , :article_id => @article.id).destroy_all
+    end
   end
 
   def invite
@@ -106,7 +102,6 @@ class ArticlesController < ApplicationController
     if  Invite.where(:user_id => @invite.user_id , :article_id => @invite.article_id).blank?
       @invite.save
     end
-
   end
 
   def invite_accept
@@ -138,8 +133,9 @@ class ArticlesController < ApplicationController
   def set_available_tags_to_gon
     gon.available_tags = Article.tags_on(:tags).pluck(:name)
   end
- def find_article
-   @article = Article.find(params[:id])
- end
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
 end

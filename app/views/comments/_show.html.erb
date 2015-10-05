@@ -1,0 +1,54 @@
+
+  <div class="comment" id="destroy_comment_<%=@comment.id%>">
+    <a class="ui circular avatar image">
+      <img data-name="<%=@comment.commenter%>" class="initialjs-avatar"/>
+    </a>
+
+
+    <div class="content">
+      <a class="author"><%=@comment.commenter%></a>
+      <div class="metadata">
+        <span class="date"><%= time_ago_in_words(@comment.created_at)  %> ago</span>
+      </div>
+
+      <div class="right_floated ">
+      <% if @comment.user_id == current_user.id || @article.user_id == current_user.id %>
+        <%= link_to ('<i class="red remove icon"></i>').html_safe, [@comment.article, @comment],
+                 method: :delete,:remote => true,
+                 data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </div>
+
+      <div class="text comment">
+        <div class="ui fluid image">
+          <%= raw @comment.body %>
+        </div>
+      </div>
+      <div class="actions">
+        Tags :
+        <%  @comment.tag_list.each do |t| %>
+        <%=link_to t , tag_path(t) ,class: 'ui blue  label' %>
+        <%end%>
+      </div>
+      <div class="actions" >
+        <div id="comment_<%=@comment.id%>">
+          <%= pluralize @comment.reputation_for(:votes).to_i, "vote" %>
+        </div>
+        <% if current_user && !current_user.voted_for?(@comment) %>
+         <%= link_to ('<i class=" black thumbs outline up icon"></i>').html_safe, vote_comment_path(@comment, type: "up"), method: "post"  , :remote => true%>
+         <%= link_to ('<i class=" black thumbs outline down icon"></i>').html_safe, vote_comment_path(@comment, type: "down"), method: "post" , :remote => true %>
+       <% end %>
+      </div>
+      <div>
+
+      </div>
+   </div>
+   <h3 class="ui dividing header"></h3>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.initialjs-avatar').initial();
+})
+</script>

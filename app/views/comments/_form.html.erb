@@ -1,7 +1,8 @@
 
-<h3 class="ui dividing header"> </h3>
-<div class="ui reply form art">
-  <%= form_for([@article, @article.comments.build]) do |f| %>
+
+<div class="ui reply form art" id="cform">
+  <h3 class="ui dividing header"> </h3>
+  <%= form_for([@article, @article.comments.build],:remote => true, :html => { :id => 'new_comment' }) do |f| %>
     <div class="field">
       <%= f.cktext_area :body%>
     </div>
@@ -9,7 +10,7 @@
       <label>tags</label>
       <ul id="comment-tags"></ul>
     </div>
-      <%= f.submit "Comment" , class:"ui secondary button" %>
+      <%= f.submit "Comment", :disable_with => 'Commenting....' , class:"ui secondary button" %>
 
 <% end %>
 </div>

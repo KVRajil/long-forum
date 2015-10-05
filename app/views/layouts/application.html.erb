@@ -24,13 +24,14 @@
       <div class="item">  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></div>
       <% end %>
   </div>
+  
   <div class = "ui container">
-    <div class="ui four item menu">
+    <div class="ui five item menu">
       <div class="item"><%= link_to"Public" , list_path(:type => 'public') %></div>
       <div class="item"><%= link_to"Private" , list_path(:type => 'private') %></div>
       <div class="item"><%= link_to"Favorites" , list_path(:type =>'favorite') %></div>
       <div class="item "><%= link_to"My posts" , list_path(:type => 'my') %></div>
-
+      <div class="item "><%= link_to"Top" , list_path(:type => 'top') %></div>
     </div>
   </div>
   <%= yield %>
