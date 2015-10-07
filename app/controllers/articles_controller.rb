@@ -22,22 +22,23 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:tag]
+      @tag_list=true
       @articles = Comment.tagged_with(params[:tag]).map { |comment| comment.article}
       @articles += Article.tagged_with(params[:tag])
       @articles.uniq!
     elsif params[:type] == 'public'
-      @articles = Article.where(:visibility => 'public')
+      @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'private'
       @articles = Invite.where(:user_id => current_user.id , :invite_accepted => 'true').map { |invite| invite.article}
     elsif params[:type] == 'my'
-      @articles = Article.where(:user_id => current_user.id ) #, :visibility => 'public'
+      @articles = Article.where(:user_id => current_user.id ).paginate(page: params[:page], per_page: 9) #, :visibility => 'public'
     elsif params[:type] == 'favorite'
       @articles = current_user.favorite_articles
     elsif params[:type] == 'top'
       @articles = Article.where(:visibility => 'public')
-      @articles = @articles.sort_by { |article| article.reputation_for(:votes).to_i }.reverse 
+      @articles = @articles.sort_by { |article| article.reputation_for(:votes).to_i }.reverse
     else
-      @articles = Article.where(:visibility => 'public')
+      @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9)
     end
   end
 
@@ -115,6 +116,8 @@ class ArticlesController < ApplicationController
     Invite.where( id: invite_id ).destroy_all
     redirect_to :back
   end
+
+
 
   private
 

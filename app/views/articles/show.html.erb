@@ -70,8 +70,12 @@
     <%= link_to 'create subpost' , articles_new_path(:parent_type => @article.id) %>
 
     <div class="ui comments" id="addcomment">
+
         <%= render 'comments/comment' %>
+        <a><div id="showmenu">Add comment</div></a>
         <%= render 'comments/form' %>
+
+
     </div>
 
 </div>

@@ -56,6 +56,10 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+  $('#cform').hide();
   $('.initialjs-avatar').initial();
+  $('#showmenu').click(function() {
+                $('#cform').slideToggle("fast");
+        });
 })
 </script>
