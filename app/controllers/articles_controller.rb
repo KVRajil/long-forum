@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
       #@articles = Comment.tagged_with(params[:tag]).map { |comment| comment.article}
       #@articles += Article.tagged_with(params[:tag])
       #@articles.uniq!
-      @articles = Article.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 9)
+      @articles = Article.joins(:tags).where('tags.name like ?' , "%#{params[:tag]}%").paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'public'
       @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'private'
