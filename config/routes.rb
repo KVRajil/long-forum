@@ -34,18 +34,13 @@ resources :articles do
   get :autocomplete_tag_name, :on => :collection
 end
 
-
-post 'articles/:id/favorite' => 'articles#favorite'
-get 'articles/:id/favorite' => 'articles#favorite'
-
 resources :users, only: [:show]
-
-
 
 resources :articles do
      collection do
       get :invite
       post :invite
+      get :favorite
     end
  end
 
@@ -53,6 +48,7 @@ resources :articles do
   member do
     post :invite_accept
     delete :invite_reject
+    post :favorite
   end
 end
 

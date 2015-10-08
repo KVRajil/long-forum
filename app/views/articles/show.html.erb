@@ -14,7 +14,7 @@
     </div>
 
 
-    <% if current_user && !current_user.voted_for?(@article) %>
+
       <%= link_to ('<i class="large black thumbs outline up icon"></i>').html_safe, vote_article_path(@article, type: "up") , method: :post , :remote => true%>
 
       <div class="ui mini horizontal statistic">
@@ -25,7 +25,7 @@
 
 
       <%= link_to ('<i class="large black thumbs outline down icon"></i>').html_safe, vote_article_path(@article, type: "down"), method: :post  , :remote => true%>
-    <% end %>
+    
 
 
           <div id = "fav">

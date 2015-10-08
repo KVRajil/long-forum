@@ -6,8 +6,8 @@
  </div>
 
     <% if current_user.favorite_articles.include? @article %>
-      <%= link_to ('<i class="large yellow star icon"></i>').html_safe , :controller => "articles", :action => "favorite", method: "post", :remote => true  %>
+      <%= link_to ('<i class="large yellow star icon"></i>').html_safe , favorite_article_path(@article), method: "post", :remote => true  %>
     <% else %>
-      <%= link_to ('<i class="large black star icon"></i>').html_safe , :controller => "articles", :action => "favorite", method: "post", :remote => true  %>
+      <%= link_to ('<i class="large black star icon"></i>').html_safe , favorite_article_path(@article), method: "post", :remote => true  %>
     <% end %>
   </div>

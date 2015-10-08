@@ -23,20 +23,21 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       @tag_list=true
-      @articles = Comment.tagged_with(params[:tag]).map { |comment| comment.article}
-      @articles += Article.tagged_with(params[:tag])
-      @articles.uniq!
+      #@articles = Comment.tagged_with(params[:tag]).map { |comment| comment.article}
+      #@articles += Article.tagged_with(params[:tag])
+      #@articles.uniq!
+      @articles = Article.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'public'
       @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'private'
-      @articles = Invite.where(:user_id => current_user.id , :invite_accepted => 'true').map { |invite| invite.article}
+      #@articles = Invite.where(:user_id => current_user.id , :invite_accepted => 'true').map { |invite| invite.article}
+      @articles = Article.joins(:invites).where(:invites => { :user_id => current_user.id , :invite_accepted => 'true' }).paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'my'
-      @articles = Article.where(:user_id => current_user.id ).paginate(page: params[:page], per_page: 9) #, :visibility => 'public'
+      @articles = Article.where(:user_id => current_user.id ).paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'favorite'
-      @articles = current_user.favorite_articles
+      @articles = current_user.favorite_articles.paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'top'
-      @articles = Article.where(:visibility => 'public')
-      @articles = @articles.sort_by { |article| article.reputation_for(:votes).to_i }.reverse
+      @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9).popular
     else
       @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9)
     end
