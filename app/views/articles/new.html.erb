@@ -2,7 +2,7 @@
     <div align=center >
 
     <%= form_for :article, url: articles_path do |f| %>
-      <%= hidden_field_tag :parent_type, @parent_type%>
+      <%= f.hidden_field :parent_type, value:@parent_type %>
     <div class="ui form art">
       <div class="ten wide field">
           <div class="field">

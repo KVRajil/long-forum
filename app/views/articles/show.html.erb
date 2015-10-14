@@ -1,82 +1,89 @@
-
-<div id="padding"> </div>
 <div class="ui container">
-  <div class="ui main text container">
-     <div class="ui header"><%= @article.title %></div>
-     <div class="ui clearing divider"></div>
-     <div class="ui fluid image">
-       <%= raw(@article.text) %>
-   </div>
-   <div class="taglist">
-       <%  @article.tag_list.each do |t| %>
-       <%=link_to t , tag_path(t) ,class: 'ui blue  label' %>
-       <%end%>
-    </div>
 
-
-
-      <%= link_to ('<i class="large black thumbs outline up icon"></i>').html_safe, vote_article_path(@article, type: "up") , method: :post , :remote => true%>
-
-      <div class="ui mini horizontal statistic">
-       <div class="value" id = "vote_count">
-           <%= @article.reputation_for(:votes).to_i%>
-         </div>
-     </div>
-
-
-      <%= link_to ('<i class="large black thumbs outline down icon"></i>').html_safe, vote_article_path(@article, type: "down"), method: :post  , :remote => true%>
-    
-
-
-          <div id = "fav">
-            <%= render "favorite_div" %>
-          </div>
-
-    <% if @article.visibility == "private" &&current_user.id == @article.user_id %>
-      <div class="ui action input">
-        <%= form_tag url_for(invite_articles_path), :remote => true do %>
-          <%= select_tag "user_id", options_from_collection_for_select(@users, "id", "email") %>
-          <%= hidden_field_tag :article_id, @article.id %>
-          <%= hidden_field_tag :invite_accepted, 'false' %>
-          <%= submit_tag "Invite" %>
-        <% end %>
+    <div id="route_info">
+      <div class="route_home">
+        Home >
       </div>
-      <div id ="invited"> </div>
-
-    <% end %>
-
-
-    <% if @article.user_id == current_user.id %>
-      <%= link_to ('<i class="large black edit icon"></i>').html_safe, edit_article_path(@article) %>
-
-
-    <%= link_to ('<i class="large red remove icon"></i>').html_safe, article_path(@article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <div class="ui header">Subposts</div>
-    <div class="ui clearing divider"></div>
-    <div class="ui middle aligned divided list">
-      <% @sub_articles.each do |sub_article| %>
-        <div class="item">
-            <%= link_to sub_article.title , article_path(sub_article) %>
+       <div class="route_title">
+         <%= truncate(@article.title , :length => 100) %>
+       </div>
+    </div>
+    <div id="post_container">
+      <div class="post_padding">
+        <div class="post_title">
+          <%= @article.title %>
         </div>
-      <% end %>
+        <div class="post_info">
+          <div class="time">
+              <%= time_ago_in_words(@article.created_at) %> ago by
+            </div>
+            <div class="author">
+               <%= link_to @article.user.username, @article.user %>
+               <% if @article.user==current_user %>
+                (You)
+                <%end%>
+            </div>
+        </div>
+        <div class="post_details">
+          <div id="index_comment1">
+            <div id="post_align_centre1">
+              <div id="fav_icon">
+                <div id=comment_ico>
+                </div>
+                <div id="fav_count">
+                  <%= @article.comments.count %>
+                </div>
+              </div>
+            </div>
+          </div>
+           <div id="index_favorite1">
+               <div id="post_align_centre1">
+                 <div id="fav_icon" class="fav_ajax">
+                   <%= render "favorite_div" %>
+                 </div>
+               </div>
+           </div>
+           <div class="post_operations">
+             <% if @article.user_id == current_user.id %>
+             <%= link_to 'Edit', edit_article_path(@article) %>
+             <%= link_to 'Delete' , article_path(@article),
+                       method: :delete,
+                       data: { confirm: 'Are you sure?' } %>
+             <% end %>
+
+           </div>
+        </div>
+        <div class="post_body">
+          <%= raw(@article.text) %>
+        </div>
+      </div>
+      <div id="comment_container">
+        <div class="comment_padding">
+            <%= render "comments/comment" %>
+            <%= render "comments/form" %>
+        </div>
+      </div>
+    </div>
+
+    <div id="side_container">
+      <%= render 'side_container' %>
     </div>
 
 
-
-    <div class="ui clearing divider"></div>
-    <%= link_to 'create subpost' , articles_new_path(:parent_type => @article.id) %>
-
-    <div class="ui comments" id="addcomment">
-
-        <%= render 'comments/comment' %>
-        <a><div id="showmenu">Add comment</div></a>
-        <%= render 'comments/form' %>
-
-
-    </div>
-
 </div>
-</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#cform').hide();
+  $('.comment_head_right').click(function() {
+                $('#cform').slideToggle("fast");
+                $('.comment_head_right').hide();
+                });
+  $('#cancel_button').click(function() {
+                $('#cform').slideToggle("fast");
+                $('.comment_head_right').show();
+                });
+  $('#cform').insertBefore('.comment_head');
+})
+</script>

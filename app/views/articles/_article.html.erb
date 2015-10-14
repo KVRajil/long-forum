@@ -1,52 +1,60 @@
 
-      <div class="item">
-          <div class="ui tiny image">
-
-             <img data-name="<%= article.title%>" class="initialjs-avatar"/>
-
-          </div>
-          <div class="content">
-            <a class="header"  ><%= link_to truncate(article.title , :length => 100) , article_path(article) %></a>
-            <div class="meta">
-              <a><%= time_ago_in_words(article.created_at) %> ago</a>
-              <a>Tags: <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %></a>
-            </div>
-            <div class="description">
-
-            </div>
-            <div class="extra">
-              <div  class="ui circular avatar image">
-                <img data-name="<%= article.user.username %>" class="initialjs-avatar"/>
-              </div>
-               <%= link_to article.user.username, article.user %>
-            </div>
-          </div>
-          <div class="ui tiny image">
-            <div class="ui tiny statistics">
-              <div class="green statistic">
-                <div class="value">
-                  <%=  article.reputation_for(:votes).to_i %>
+      <div class="item" id="post">
+          <div id="content">
+              <div class="content_padding">
+                <div class="title">
+                  <%= link_to truncate(article.title , :length => 100) , article_path(article) %>
                 </div>
-                <div class="label">
-                  Votes
+                <div class="foot">
+
+                  <div class="time">
+                    <%= time_ago_in_words(article.created_at) %> ago by
+                  </div>
+                  <div class="author">
+                     <%= link_to article.user.username, article.user %>
+                  </div>
+                  <div class="tags">
+                    <div id=tag_ico>
+                    </div>
+                    <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %>
+                  </div>
+
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="ui tiny image">
-            <div class="ui tiny statistics">
-              <div class="blue statistic">
-                <div class="value">
-                  <%= article.comments.count %>
-                </div>
-                <div class="label">
-                  Comments
+         </div>
+         <div id="index_comment">
+           <div id="post_align_centre">
+             <div id="fav_icon">
+               <div id="comment_ico">
+               </div>
+               <div id="fav_count">
+                 <%= article.comments.count %>
+               </div>
+             </div>
+           </div>
+         </div>
+          <div id="index_favorite">
+              <div id="post_align_centre">
+                <div id="fav_icon">
+                  <% if current_user.favorite_articles.include? article %>
+                    <div id=fav_ico_d>
+                    </div>
+                  <% else %>
+                    <div id=fav_ico>
+                    </div>
+                  <% end %>
+                  <div id="fav_count">
+                    <%= article.favorites.count %>
+                  </div>
                 </div>
               </div>
-            </div>
           </div>
+
+
+
       </div>
-
+      <div id="spacing_index">
+      </div>
 
       <script type="text/javascript">
       $(document).ready(function(){

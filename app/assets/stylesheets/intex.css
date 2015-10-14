@@ -1,0 +1,135 @@
+#sort_list ul li{
+  display: inline;
+  padding-right: 40px;
+}
+#sort_list a{
+  color: #999999;
+  font-size: 14px;
+}
+#sort_list ul {
+
+  margin-left: -33px;
+}
+
+#sort_list{
+  margin-top: 50px;
+  margin-bottom: 40px;
+
+}
+
+#sort_list  a:hover{
+    border-bottom:3px solid #e67e22;
+
+}
+
+#post{
+  background-color: white;
+}
+
+#spacing_index{
+  margin-bottom: 20px;
+}
+
+
+
+#index_comment{
+  width: 110px;
+  min-height: 110px;
+  float: right;
+}
+#index_comment :hover{
+   background-color:#FFD4AE;
+}
+#index_favorite{
+  width: 110px;
+  min-height: 110px;
+  border-left:1px solid #f2f1ef;
+  border-right:1px solid #f2f1ef;
+  float: right;
+}
+#index_favorite :hover{
+   background-color:#FFD4AE;
+}
+#post{
+  min-height: 110px;
+  border-radius: 4px;
+}
+#fav_ico_d{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) 0px -60px ;
+  float: left;
+}
+#fav_ico{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) 0px -20px ;
+  float: left;
+}
+#comment_ico{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) -20px -20px ;
+  float: left;
+}
+#fav_count {
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  color: #999999;
+  padding-left: 10px;
+
+}
+
+#post_align_centre{
+  width: 100%;
+  height: 110px;
+  padding-top: 45px;
+  padding-left: 30px;
+
+}
+#content{
+  float: left;
+  width: 800px;
+}
+#content .content_padding{
+  padding-top: 20px;
+  padding-left: 20px;
+}
+#content .title a{
+  font-size: 16px;
+  color: #333333;
+}
+#content .title a:hover{
+  color: #8e44ad;
+}
+#content .foot{
+  font-size: 12px;
+  color: #999999;
+  position: relative;
+  bottom: -30px;
+}
+#content .time{
+  float: left;
+}
+#content .author{
+  padding-left: 2px;
+  float: left;
+}
+#content .tags{
+  padding-left: 30px;
+  float: left;
+}
+#tag_ico{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) -40px -20px ;
+  float: left;
+  padding-right: 30px;
+}
+#content .tags a{
+  color: #999999;
+}
+#content .author a{
+  color: #333333;
+}

@@ -1,14 +1,19 @@
 
 
-<form action="<%= articles_path %>" data-remote="true" method="get" >
-  <input type="text" name="tag" id="tag" class="ui-autocomplete-input">
-  <%= submit_tag "Search", :name => nil%>
-</form>
 
-
-<h1 class="ui center aligned header">Posts</h1>
 <div class="ui container">
-  <div class="ui relaxed divided items" id="my-posts">
+    <div id="sort_list">
+      <ul>
+        <li class="item"><%= link_to"All posts" , list_path(:type => 'public') %></li>
+        <li class="item "><%= link_to"My posts" , list_path(:type => 'my') %></li>
+        <li class="item"><%= link_to"Shared with me" , list_path(:type => 'private') %></li>
+        <li class="item"><%= link_to"Favorites" , list_path(:type =>'favorite') %></li>
+        <li class="item "><%= link_to"Top" , list_path(:type => 'top') %></li>
+      </ul>
+    </div>
+
+
+  <div  id="my-posts">
 
 
       <%= render @articles %>
@@ -16,7 +21,7 @@
 
     <div id="infinite-scrolling">
 
-  <%= will_paginate %>
+        <%= will_paginate %>
 
     </div>
 
@@ -25,20 +30,4 @@
 
 
 
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('input[name=tag]').keyup( function () {
-
-        $.ajax({
-                url: "/articles",
-                dataType : "script",
-                data: { "tag":this.value  },
-                xhrFields: {
-      withCredentials: true
-   }
-
-              })
-
-          });
-    })
-    </script>
+  

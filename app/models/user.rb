@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
         has_many :favorites
         has_many :favorite_articles,class_name:"Article", through: :favorites
         has_many :articles
-
+        has_many :invites
 
 
 end

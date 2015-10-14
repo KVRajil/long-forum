@@ -1,3 +1,3 @@
 
-$("<div class='comment' id='new_comment_<%=@comment.id%>'></div>").insertBefore( "#cform" );
+$("<div class='comment' id='new_comment_<%=@comment.id%>'></div>").insertAfter( ".comment_head" );
 $("#new_comment_<%=@comment.id%>").html('<%=j render 'show'%>');

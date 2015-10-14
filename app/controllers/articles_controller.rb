@@ -6,16 +6,12 @@ class ArticlesController < ApplicationController
   respond_to :html, :js
 
   def new
-    @parent_type =params[:parent_type]
-    if  @parent_type.nil?
-      @parent_type =0
-    end
+    @parent_type =params[:parent_type].to_i
   end
 
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.parent_type = params[:parent_type]
     @article.save
     redirect_to @article
   end
@@ -23,14 +19,10 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       @tag_list=true
-      #@articles = Comment.tagged_with(params[:tag]).map { |comment| comment.article}
-      #@articles += Article.tagged_with(params[:tag])
-      #@articles.uniq!
       @articles = Article.joins(:tags).where('tags.name like ?' , "%#{params[:tag]}%").paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'public'
       @articles = Article.where(:visibility => 'public').paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'private'
-      #@articles = Invite.where(:user_id => current_user.id , :invite_accepted => 'true').map { |invite| invite.article}
       @articles = Article.joins(:invites).where(:invites => { :user_id => current_user.id , :invite_accepted => 'true' }).paginate(page: params[:page], per_page: 9)
     elsif params[:type] == 'my'
       @articles = Article.where(:user_id => current_user.id ).paginate(page: params[:page], per_page: 9)
@@ -46,8 +38,7 @@ class ArticlesController < ApplicationController
   def show
     @users = User.where("id NOT IN (?)",current_user)
       if @article.user_id == current_user.id || @article.visibility == "public" || Invite.where(:user_id => current_user.id , :article_id => @article.id ,:invite_accepted => 'true').present?
-        @sub_articles = Article.where(:parent_type => @article.id)
-        render 'show'
+        @sub_articles = @article.sub_articles
       else
         render :file => 'public/422.html'
       end
@@ -63,9 +54,6 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      if @article.visibility == 'public'
-        Invite.where(:article_id => @article.id).destroy_all
-      end
       redirect_to @article
     else
       render 'edit'
@@ -75,7 +63,6 @@ class ArticlesController < ApplicationController
   def destroy
     if @article.user_id ==current_user.id
       @article.destroy
-      Article.where(:parent_type => @article.id).destroy_all
       redirect_to articles_path
     else
        render :file => 'public/422.html'
@@ -90,10 +77,7 @@ class ArticlesController < ApplicationController
 
   def favorite
     if  Favorite.where(:user_id => current_user.id , :article_id => @article.id).blank?
-      @favorite = Favorite.new
-      @favorite.article_id = @article.id
-      @favorite.user_id = current_user.id
-      @favorite.save
+      @favorite = Favorite.create(:article_id => @article.id , :user_id =>current_user.id)
     else
         Favorite.where(:user_id => current_user.id , :article_id => @article.id).destroy_all
     end
@@ -129,6 +113,7 @@ class ArticlesController < ApplicationController
   def invite_params
     params.permit(:user_id, :article_id, :invite_accepted)
   end
+
 
   def set_article_tags_to_gon
     gon.article_tags = @article.tag_list

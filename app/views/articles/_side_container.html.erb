@@ -1,0 +1,44 @@
+<div class="tag_container">
+  <div class="tag_head">
+     TAGS
+  </div>
+  <div class="tag_list">
+    <%  @article.tag_list.each do |t| %>
+       <%=link_to t , tag_path(t) ,class: 'tag' %>
+       <%end%>
+  </div>
+</div>
+
+<div class="share_container">
+  <div class="share_head">
+     SHARED WITH (<%=@article.invites.count%>)
+  </div>
+  <div class="user_list">
+    <%  @article.invites.each do |t| %>
+      <div class="user">
+        <%=t.user.username %>
+     </div>
+       <%end%>
+  </div>
+  <div class="invite">
+    + Invite More People
+  </div>
+</div>
+
+
+<div class="subpost_container">
+  <div class="subpost_head">
+     SUBPOSTS (<%=@article.sub_articles.count%>)
+  </div>
+  <div class="subpost_list">
+    <%  @article.sub_articles.each do |t| %>
+      <div class="subpost">
+        <%= %>
+        <%=link_to t.title , article_path(t) %>
+     </div>
+       <%end%>
+  </div>
+  <div class="new_subpost">
+      <%= link_to '+ Create Subposts' , articles_new_path(:parent_type => @article.id) %>
+  </div>
+</div>
