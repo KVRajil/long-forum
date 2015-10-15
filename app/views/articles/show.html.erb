@@ -1,12 +1,17 @@
 <div class="ui container">
-
+<div  id="my-posts">
     <div id="route_info">
       <div class="route_home">
-        Home >
+        <%= link_to 'Home >', root_url%>
       </div>
-       <div class="route_title">
-         <%= truncate(@article.title , :length => 100) %>
-       </div>
+         <% unless @article.parent_type =='0' %>
+           <div class="route_title">
+             <%= link_to  truncate(@article.parent_article.title , :length => 100) , article_path(@article.parent_article)%> >
+           </div>
+        <% end %>
+      <div class="route_title">
+        <%= truncate(@article.title , :length => 100) %>
+      </div>
     </div>
     <div id="post_container">
       <div class="post_padding">
@@ -69,9 +74,16 @@
       <%= render 'side_container' %>
     </div>
 
-
+</div>
 </div>
 
+
+<div id="example-popup" class="popup">
+    <div class="popup-body">
+
+    </div>
+</div>
+<div class="popup-overlay"></div>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -85,5 +97,36 @@ $(document).ready(function(){
                 $('.comment_head_right').show();
                 });
   $('#cform').insertBefore('.comment_head');
+
+  $('[data-popup-target]').click(function () {
+        $('html').addClass('overlay');
+        var activePopup = $(this).attr('data-popup-target');
+        $(activePopup).addClass('visible');
+
+    });
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 27 && $('html').hasClass('overlay')) {
+            clearPopup();
+        }
+    });
+
+    $('.popup-exit').click(function () {
+        clearPopup();
+
+    });
+
+    $('.popup-overlay').click(function () {
+        clearPopup();
+    });
+
+    function clearPopup() {
+        $('.popup.visible').addClass('transitioning').removeClass('visible');
+        $('html').removeClass('overlay');
+
+        setTimeout(function () {
+            $('.popup').removeClass('transitioning');
+        }, 200);
+    }
 })
 </script>

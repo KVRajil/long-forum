@@ -22,6 +22,10 @@
 
 }
 
+#sort_list .active a{
+  border-bottom:3px solid #e67e22;
+}
+
 #post{
   background-color: white;
 }
@@ -66,10 +70,22 @@
   background: url(/Sprite_20px.png) 0px -20px ;
   float: left;
 }
+#fav_ico:hover{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) 0px -40px ;
+  float: left;
+}
 #comment_ico{
   width: 20px;
   height: 20px;
   background: url(/Sprite_20px.png) -20px -20px ;
+  float: left;
+}
+#comment_ico:hover{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) -20px -40px ;
   float: left;
 }
 #fav_count {
@@ -129,6 +145,7 @@
 }
 #content .tags a{
   color: #999999;
+  padding-right: 15px;
 }
 #content .author a{
   color: #333333;

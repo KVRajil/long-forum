@@ -1,3 +1,16 @@
+<% unless @article.parent_type == '0' %>
+  <div class="tag_container">
+    <div class="tag_head">
+       PARENT TOPIC
+    </div>
+    <div class="tag_list">
+          <div class="parent_post">
+            <%= link_to  truncate(@article.parent_article.title , :length => 100) , article_path(@article.parent_article)%>
+          </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="tag_container">
   <div class="tag_head">
      TAGS
@@ -20,12 +33,12 @@
      </div>
        <%end%>
   </div>
-  <div class="invite">
+  <div class="invite" data-popup-target="#example-popup">
     + Invite More People
   </div>
 </div>
 
-
+<% if @article.parent_type == '0' %>
 <div class="subpost_container">
   <div class="subpost_head">
      SUBPOSTS (<%=@article.sub_articles.count%>)
@@ -42,3 +55,4 @@
       <%= link_to '+ Create Subposts' , articles_new_path(:parent_type => @article.id) %>
   </div>
 </div>
+<% end %>

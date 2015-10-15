@@ -4,11 +4,11 @@
 <div class="ui container">
     <div id="sort_list">
       <ul>
-        <li class="item"><%= link_to"All posts" , list_path(:type => 'public') %></li>
-        <li class="item "><%= link_to"My posts" , list_path(:type => 'my') %></li>
-        <li class="item"><%= link_to"Shared with me" , list_path(:type => 'private') %></li>
-        <li class="item"><%= link_to"Favorites" , list_path(:type =>'favorite') %></li>
-        <li class="item "><%= link_to"Top" , list_path(:type => 'top') %></li>
+        <li class="active"><%= link_to"All posts" , list_path(:type => 'public') %></li>
+        <li><%= link_to"My posts" , list_path(:type => 'my') %></li>
+        <li><%= link_to"Shared with me" , list_path(:type => 'private') %></li>
+        <li><%= link_to"Favorites" , list_path(:type =>'favorite') %></li>
+        <li><%= link_to"Top" , list_path(:type => 'top') %></li>
       </ul>
     </div>
 
@@ -27,7 +27,21 @@
 
   </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+      $(function() {
 
+           var pgurl = '/'+ window.location.href.substr(window.location.href.lastIndexOf("/")+1);
 
+           $("ul a").each(function(){
 
-  
+                if($(this).attr("href") == pgurl  )
+                {
+                  $(this).parent().parent().children().removeClass('active')
+                  $(this).parent().addClass("active");
+                }
+           })
+    });
+
+    })
+</script>

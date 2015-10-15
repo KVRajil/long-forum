@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :invites, dependent: :destroy
   has_many :sub_articles, class_name: 'Article',foreign_key: 'parent_type' , dependent: :destroy
+  has_one  :parent_article, class_name: 'Article',foreign_key: 'id',primary_key: 'parent_type'
   belongs_to :user
   validates :title, presence: true,
                     length: { minimum: 5 }

@@ -26,10 +26,10 @@
         <div class="author">
            <%= comment.commenter %>
         </div>
-        <div class="vote_comment">
+        <div class="vote_comment" id="comment_<%=comment.id%>">
 
-          <div class="vote_count" id="comment_<%=comment.id%>">
-              <%= comment.reputation_for(:votes).to_i %>
+          <div class="vote_count">
+              <%= comment.evaluations.where(value: '1').count %>
           </div>
           <%if  comment.evaluation_value(current_user, comment) == "upvoted" %>
           <div class="up_vote">
@@ -49,6 +49,9 @@
             <%= link_to ('<div class="down_vote_ico"></div>').html_safe, vote_comment_path(comment, type: "down"), method: "post"  , :remote => true%>
           </div>
           <% end %>
+          <div class="vote_count">
+              <%= comment.evaluations.where(value: '-1').count %>
+          </div>
         </div>
     </div>
   </div>

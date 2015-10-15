@@ -19,10 +19,13 @@
 }
 #tag_search input[type="text"] {
   background-color: #5a457e;
-  color:white;
   outline-style:none;
   box-shadow:none;
   border-color:transparent;
+}
+
+#tag_search input[type="text"]:focus {
+    background-color: white;
 }
 
 #new_post_button{
@@ -88,11 +91,22 @@ body{
   border-style: solid;
   border-color:#8e44ad;
   width: 200px;
+  margin-left: -65px;
 }
 #dropdown_user .item{
   height: 45px;
 }
+#dropdown_user .item a{
+  color: #333;
+  font-size: 14px;
+}
 
 #dropdown_user .item:hover {
     background-color: #FFD4AE;
+}
+.footer_form{
+  height: 200px;
+}
+.ui.container{
+  overflow: hidden;
 }

@@ -1,1 +1,1 @@
-$("#comment_<%=@comment.id%>").html('<%= @comment.reputation_for(:votes).to_i %>');
+$("#comment_<%=@comment.id%>").html('<%=j render 'vote'%>');

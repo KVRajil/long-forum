@@ -1,28 +1,48 @@
-<div class="newpost">
-    <div align=center >
-
-    <%= form_for :article, url: articles_path do |f| %>
-      <%= f.hidden_field :parent_type, value:@parent_type %>
-    <div class="ui form art">
-      <div class="ten wide field">
-          <div class="field">
-              <%= f.text_field :title,  :placeholder => 'Title' %>
-          </div>
-          <div class="field">
-              <%= f.cktext_area :text,  :placeholder => 'enter description here'%>
-          </div>
-          <div class="field">
-            <label>tags</label>
-            <ul id="article-tags"></ul>
-          </div>
-          <div class="field">
-              <%= f.select :visibility, options_for_select([["Public", "public"], ["Private", "private"]]) %>
-          </div>
-
-              <%= f.submit "Post" , class:"ui button large fluid green" %>
-       </div>
+<div class="ui container">
+    <div id="route_info">
+      <div class="route_home">
+        <%= link_to 'Home >', root_url%>
+      </div>
+      <div class="route_title">
+        New Post
+      </div>
     </div>
-  <% end %>
-  </div>
-  </div>
-</div>
+
+    <div id="create_post">
+        <div class="new_post_padding">
+          <div class="post_title">
+              Post Title
+          </div>
+          <%= form_for :article, url: articles_path do |f| %>
+            <%= f.hidden_field :parent_type, value:@parent_type %>
+                    <div class="ui form field">
+                        <%= f.text_field :title,  :placeholder => 'A nice title for your post' %>
+                    </div>
+                    <div class="post_title" id="head_pad">
+                        Content
+                    </div>
+                    <div class="field">
+                        <%= f.cktext_area :text,  :placeholder => 'enter description here'%>
+                    </div>
+                    <div class="post_title">
+                        Tags
+                    </div>
+                    <div class="field" id="remove_pad">
+                      <ul id="article-tags"></ul>
+                    </div>
+                    <div class="post_title">
+                        Type
+                    </div>
+                    <div class="field">
+                        <%= f.radio_button 'visibility', 'public', :checked => true %>
+                        <%= f.label :public_name, 'Public', :id => "public_name"  %>
+                        <%= f.radio_button 'visibility', 'private' %>
+                        <%= f.label :private_name, 'Private', :id => "private_name"  %>
+                    </div>
+                  <%= f.submit "Submit Post" ,class:"ui button"  %>
+          <% end %>
+          <button class="ui violet basic button" id="cancel_button">Cancel</button>
+        </div>
+    </div>
+
+<div>
