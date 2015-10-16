@@ -9,23 +9,28 @@
 </div>
 <% @article.comments.each do |comment| %>
   <div class="comments" id="destroy_comment_<%=comment.id%>">
-    <div class="right_floated ">
-      <% if comment.user_id == current_user.id || @article.user_id == current_user.id %>
-        <%= link_to ('<i class="grey tiny remove icon"></i>').html_safe, [comment.article, comment],
-                 method: :delete,:remote => true,
-                 data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      </div>
+
     <div class="comment_body">
       <%= raw comment.body %>
     </div>
     <div class="comment_info">
-        <div class="time">
-          <%= time_ago_in_words(comment.created_at) %> ago by
-        </div>
-        <div class="author">
-           <%= comment.commenter %>
-        </div>
+
+           <div class="right_floated">
+             <div class="time">
+               <%= time_ago_in_words(comment.created_at) %> ago by
+             </div>
+             <div class="author">
+                <%= comment.commenter %>
+             </div>
+             <div class="destroy_comment">
+               <% if comment.user_id == current_user.id || @article.user_id == current_user.id %>
+                 <%= link_to "| delete", [comment.article, comment],
+                          method: :delete,:remote => true,
+                          data: { confirm: 'Are you sure?' } %>
+               <% end %>
+               </div>
+           </div>
+
         <div class="vote_comment" id="comment_<%=comment.id%>">
 
           <div class="vote_count">
