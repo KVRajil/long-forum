@@ -49,12 +49,22 @@
                </div>
            </div>
            <div class="post_operations">
+
              <% if @article.user_id == current_user.id %>
-             <%= link_to 'Edit', edit_article_path(@article) %>
-             <%= link_to 'Delete' , article_path(@article),
-                       method: :delete,
-                       data: { confirm: 'Are you sure?' } %>
+               <div class="ui simple dropdown item" id=user_click>
+                 <div id=operation_ico>
+                 </div>
+                 <div class="menu" id="dropdown_post">
+                    <div class="pointer"></div>
+                   <div class="item"><%= link_to 'Edit', edit_article_path(@article) %></div>
+                   <div class="item"><%= link_to 'Delete' , article_path(@article),
+                             method: :delete,
+                             data: { confirm: 'Are you sure?' } %></div>
+                 </div>
+               </div>
              <% end %>
+
+
 
            </div>
         </div>
@@ -80,10 +90,11 @@
 
 <div id="example-popup" class="popup">
     <div class="popup-body">
-
+        <%=render "invite_popup" %>
     </div>
 </div>
 <div class="popup-overlay"></div>
+
 
 <script type="text/javascript">
 $(document).ready(function(){

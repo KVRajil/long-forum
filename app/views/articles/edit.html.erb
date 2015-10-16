@@ -14,7 +14,7 @@
               Post Title
           </div>
           <%= form_for :article, url: article_path(@article), method: :patch do |f| %>
-            <%= f.hidden_field :parent_type, value:@article.parent_article.id %>
+
                     <div class="ui form field">
                         <%= f.text_field :title,  :placeholder => 'A nice title for your post' %>
                     </div>
@@ -41,7 +41,7 @@
                     </div>
                   <%= f.submit "Submit Post" ,class:"ui button"  %>
           <% end %>
-          <button class="ui violet basic button" id="cancel_button">Cancel</button>
+          <%= button_to "Cancel", root_url , method:"get" , class: "ui violet basic button" ,id:"cancel_button"  %>
         </div>
     </div>
 

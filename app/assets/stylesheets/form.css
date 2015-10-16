@@ -1,4 +1,4 @@
-/*.formcetre {
+.formcetre {
   position: relative;
   top: 40%;
   transform: translateY(-50%);
@@ -24,14 +24,6 @@
 }
 
 
-body {
-  font-family:"Arial", Helvetic, sans-serif
-}
-
-
-
-
-
 
 
 #invited{
@@ -41,7 +33,7 @@ body {
 
 .taglist{
   padding-top: 20px;
-} */
+} 
 
 
 .right_floated{

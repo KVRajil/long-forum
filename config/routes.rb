@@ -34,6 +34,10 @@ resources :articles do
   get :autocomplete_tag_name, :on => :collection
 end
 
+resources :users do
+  get :autocomplete_user_email, :on => :collection
+end
+
 resources :users, only: [:show]
 
 resources :articles do

@@ -68,6 +68,35 @@ body{
   padding-bottom: 10px;
   margin-left: 40px;
 }
+#user_click .pointer{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-top: 0 solid transparent;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #8e44ad;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -13px;
+  left: 83px;
+}
+#user_click .pointer:after{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-top: 0 solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid white;
+  display: block;
+  /* width: 0; */
+  z-index: 1;
+  top: 1px;
+  left: -10px;
+}
+
 #logo{
 
 

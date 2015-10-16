@@ -41,7 +41,7 @@
                     </div>
                   <%= f.submit "Submit Post" ,class:"ui button"  %>
           <% end %>
-          <button class="ui violet basic button" id="cancel_button">Cancel</button>
+          <%= button_to "Cancel", root_url , method:"get" , class: "ui violet basic button" ,id:"cancel_button"  %>
         </div>
     </div>
 
