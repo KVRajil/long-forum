@@ -1,7 +1,7 @@
 
 .popup.visible .popup-body {
     width: 700px;
-    height: 400px;
+    height: auto;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
@@ -26,4 +26,29 @@
 }
 .ui-autocomplete{
   z-index: 2147483647;
+}
+
+.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.tagit-autocomplete{
+  z-index: 2147483647;
+}
+#1selected_val {
+    padding-top: 104px;
+    margin-left: -206px;
+    float: left;
+}
+#selected_val .item{
+    float: right;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: #8e44ad;
+}
+
+#invite_search{
+  padding-top: 95px;
+  margin-left: -278px;
+}
+
+
+#invite_search .ui.input{
+  width: 250px;
 }

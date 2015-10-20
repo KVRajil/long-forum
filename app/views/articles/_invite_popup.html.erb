@@ -3,9 +3,21 @@
 </div>
 <div id ="invite_search">
   <%= form_tag url_for(invite_articles_path), :remote => true do %>
-         <%= autocomplete_field_tag :user_id, params[:user_id], autocomplete_user_email_users_path, :update_elements => {}  %>
+          <div class="ui input">
+            <%= autocomplete_field_tag :email, params[:email], autocomplete_user_email_users_path, :element_id=>"#id" , :update_elements => {}, :placeholder =>"Type user's name" %>
+         </div>
+         <%= hidden_field_tag :user_id %>
          <%= hidden_field_tag :article_id, @article.id %>
-         <%= hidden_field_tag :invite_accepted, 'false' %>
+         <div id="user_inv"></div>
          <%= submit_tag "Invite" %>
        <% end %>
 </div>
+<div id="selected_val"> Shared with :</div>
+
+<script>
+$(document).ready(function () {
+ $('#user_id').on('autocompletechange change', function () {
+     $('#selected_val').append('<div class ="item">' + this.value + '</div>');
+ }).change();
+});
+</script>

@@ -7,13 +7,17 @@ class ArticlesController < ApplicationController
 
   def new
     @parent_type =params[:parent_type].to_i
+    @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.save
-    redirect_to @article
+    if @article.save
+       redirect_to @article
+     else
+       render 'new'
+     end
   end
 
   def index
@@ -39,6 +43,7 @@ class ArticlesController < ApplicationController
     @users = User.where("id NOT IN (?)",current_user)
       if @article.user_id == current_user.id || @article.visibility == "public" || Invite.where(:user_id => current_user.id , :article_id => @article.id ,:invite_accepted => 'true').present?
         @sub_articles = @article.sub_articles
+        @comments = Comment.where(:article_id => @article.id).paginate(page: params[:page], per_page: 3)
       else
         render :file => 'public/422.html'
       end

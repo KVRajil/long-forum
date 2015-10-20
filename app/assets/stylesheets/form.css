@@ -3,7 +3,7 @@
   top: 40%;
   transform: translateY(-50%);
 }
-.regerror , .alert.alert-danger{
+#error_explanation, .regerror , .alert.alert-danger{
   color:red;
 }
 .ui.navbar{margin-top: -13px;}
@@ -33,7 +33,7 @@
 
 .taglist{
   padding-top: 20px;
-} 
+}
 
 
 .right_floated{

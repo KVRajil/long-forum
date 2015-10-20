@@ -45,7 +45,9 @@
 
 }
 #post_container img{
-  max-width: 680px;
+  max-width: 90%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 #post_container .post_padding{
   padding-left: 30px;

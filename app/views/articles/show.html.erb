@@ -77,6 +77,9 @@
             <%= render "comments/comment" %>
             <%= render "comments/form" %>
         </div>
+          <div id="paginate_div">
+            <%= will_paginate @comments, :previous_label => 'Previous', :next_label => 'Next' %>
+          </div>
       </div>
     </div>
 

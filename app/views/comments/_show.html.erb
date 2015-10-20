@@ -9,5 +9,51 @@
       <div class="author">
          <%= @comment.commenter %>
       </div>
+      <div class="comment_info">
+
+             <div class="right_floated">
+               <div class="time">
+                 <%= time_ago_in_words(@comment.created_at) %> ago by
+               </div>
+               <div class="author">
+                  <%= @comment.commenter %>
+               </div>
+               <div class="destroy_comment">
+                 <% if @comment.user_id == current_user.id || @article.user_id == current_user.id %>
+                   <%= link_to "| delete", [@comment.article, @comment],
+                            method: :delete,:remote => true,
+                            data: { confirm: 'Are you sure?' } %>
+                 <% end %>
+                 </div>
+             </div>
+
+          <div class="vote_comment" id="comment_<%=@comment.id%>">
+
+            <div class="vote_count">
+                <%= @comment.evaluations.where(value: '1').count %>
+            </div>
+            <%if  @comment.evaluation_value(current_user, @comment) == "upvoted" %>
+            <div class="up_vote">
+              <%= link_to ('<div class="up_vote_ico_d"></div>').html_safe, vote_comment_path(@comment, type: "up"), method: "post"  , :remote => true%>
+            </div>
+            <% else %>
+            <div class="up_vote">
+              <%= link_to ('<div class="up_vote_ico"></div>').html_safe, vote_comment_path(@comment, type: "up"), method: "post"  , :remote => true%>
+            </div>
+            <% end %>
+            <%if @comment.evaluation_value(current_user, @comment) == "downvoted" %>
+              <div class="down_vote">
+                <%= link_to ('<div class="down_vote_ico_d"></div>').html_safe, vote_comment_path(@comment, type: "down"), method: "post"  , :remote => true%>
+              </div>
+            <% else %>
+            <div class="down_vote">
+              <%= link_to ('<div class="down_vote_ico"></div>').html_safe, vote_comment_path(@comment, type: "down"), method: "post"  , :remote => true%>
+            </div>
+            <% end %>
+            <div class="vote_count">
+                <%= @comment.evaluations.where(value: '-1').count %>
+            </div>
+          </div>
+      </div>
   </div>
 </div>

@@ -21,22 +21,25 @@
        <%end%>
   </div>
 </div>
-
-<div class="share_container">
-  <div class="share_head">
-     SHARED WITH (<%=@article.invites.count%>)
+<% if @article.visibility == "private" %>
+  <div class="share_container">
+    <div class="share_head">
+       SHARED WITH (<%=@article.invites.count%>)
+    </div>
+    <div class="user_list">
+      <%  @article.invites.each do |t| %>
+        <div class="user">
+          <%=t.user.username %>
+       </div>
+         <%end%>
+    </div>
+    <% if current_user.id == @article.user_id %>
+      <div class="invite" data-popup-target="#example-popup">
+        + Invite More People
+      </div>
+    <% end %>
   </div>
-  <div class="user_list">
-    <%  @article.invites.each do |t| %>
-      <div class="user">
-        <%=t.user.username %>
-     </div>
-       <%end%>
-  </div>
-  <div class="invite" data-popup-target="#example-popup">
-    + Invite More People
-  </div>
-</div>
+<% end %>
 
 <% if @article.parent_type == '0' %>
 <div class="subpost_container">

@@ -1,0 +1,40 @@
+#paginate_div ul li{
+  display: inline;
+}
+#paginate_div .prev.previous_page {
+  border: solid 1px #999999;
+}
+
+#paginate_div .next.next_page  {
+  border: solid 1px #999999;
+}
+
+#paginate_div li{
+  border: solid 1px #999999;
+  padding: 5px;
+  border-radius: 4px;
+  margin:0 0 0 10px;
+
+}
+
+#paginate_div .active{
+  border: solid 1px #e67e22;
+  padding: 5px;
+  border-radius: 4px;
+
+}
+
+#paginate_div {
+  width: 100%;
+  border-top: 2px solid #f2f1ef;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+#paginate_div .pagination{
+  float: right;
+  padding-bottom: 20px;
+}
+
+#paginate_div a{
+  color: #333;
+}
