@@ -1,0 +1,2 @@
+$(".invitation_count").html('INVITATIONS (<%=@invites.count%>)');
+$("#invite-<%=@invite_id%>").fadeOut(300, function() { $(this).remove(); });

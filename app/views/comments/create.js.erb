@@ -1,3 +1,16 @@
 
 $("<div class='comment' id='new_comment_<%=@comment.id%>'></div>").insertAfter( ".comment_head" );
 $("#new_comment_<%=@comment.id%>").html('<%=j render 'show'%>');
+$(".comment_head_left").html('COMMENTS (<%=@article.comments.count %>)');
+$("#fav_count").html('<%=@article.comments.count %>');
+
+$('#cform').slideToggle("fast");
+$('.comment_head_right').show();
+var $el = $("#color_<%=@comment.id%>"),
+    x = 2000,
+    originalColor = $el.css("background");
+
+$el.css("background", "#FFD4AE");
+setTimeout(function(){
+  $el.css("background", originalColor);
+}, x);

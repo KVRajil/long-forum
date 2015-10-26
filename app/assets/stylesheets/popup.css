@@ -17,7 +17,7 @@
   font-size: 16px;
   font-weight: bold;
   color: #333;
-  float: left;
+  text-align: left;
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 30px;
@@ -27,28 +27,56 @@
 .ui-autocomplete{
   z-index: 2147483647;
 }
-
-.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.tagit-autocomplete{
+.ui-widget-content ul{
   z-index: 2147483647;
 }
-#1selected_val {
-    padding-top: 104px;
-    margin-left: -206px;
-    float: left;
+
+.ui-autocomplete, .ui-front, .ui-menu, .ui-widget, .ui-widget-content{
+  z-index: 2147483647;
 }
-#selected_val .item{
-    float: right;
+#selected_val {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  padding-left: 34px;
+  word-break: break-all;
+}
+#selected_val .shared_item{
+    display: inline;
     padding-left: 20px;
     padding-bottom: 20px;
     color: #8e44ad;
 }
 
 #invite_search{
-  padding-top: 95px;
-  margin-left: -278px;
+  padding-top: 30px;
+  margin-left: -343px;
 }
+
 
 
 #invite_search .ui.input{
   width: 250px;
+}
+
+
+.ui.button{
+  background-color: #8e44ad;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  float: left;
+
+}
+
+.ui.button:hover{
+  background-color: #8e44ad;
+  color: white;
+  font-size: 16px;
+
+}
+#invite_button_group{
+  height: 75px;
+  padding-top: 20px;
+  padding-left: 30px;
 }

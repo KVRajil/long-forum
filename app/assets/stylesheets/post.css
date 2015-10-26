@@ -1,5 +1,5 @@
 #route_info {
- padding-top: 50px;
+ padding-top: 20px;
  padding-bottom: 60px;
  color: #999999;
 
@@ -66,6 +66,11 @@
   float: left;
   font-size: 14px;
   color: #999999;
+}
+#post_container .author a{
+
+  font-size: 14px;
+  color: #8e44ad;
 
 }
 #post_container .post_info{
@@ -119,6 +124,49 @@
 #post_container .post_body p{
   line-height: 30px;
 }
+
+
+#op_click{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 4px;
+  border: solid 1px #999;
+  margin-left: 40px;
+  margin-top: 12px;
+}
+#op_click:hover{
+  background-color: #8e44ad;
+  border-color: #8e44ad;
+}
+#op_click .pointer{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-top: 0 solid transparent;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #8e44ad;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -12px;
+  left: 83px;
+}
+#op_click .pointer:after{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-top: 0 solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid white;
+  display: block;
+  /* width: 0; */
+  z-index: 1;
+  top: 1px;
+  left: -10px;
+}
+
 #operation_ico{
   width: 20px;
   height: 20px;
@@ -134,9 +182,14 @@
     border-color: #8e44ad;
     width: 122px;
     margin-left: -52px;
+    margin-top: 13px;
 }
-
-
+#dropdown_post .item a{
+  color: #333;
+}
+#dropdown_post .item:hover {
+    background-color: #FFD4AE;
+}
 
 #dropdown_post .pointer{
   content: '';
@@ -166,4 +219,14 @@
   z-index: 1;
   top: 2px;
   left: -10px;
+}
+.shared_status .alert{
+  padding: 15px;
+  background-color: #8CC98C;
+  color: white;
+  width: 70%;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
 }

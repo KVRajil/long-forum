@@ -1,48 +1,82 @@
-
-
-
-<div class="ui card">
-  <div class="image">
-    <img src="kristy.png">
-  </div>
-  <div class="content">
-    <a class="header"><%= @user.username %></a>
-    <div class="meta">
-      <span class="date">Joined <%=time_ago_in_words(@user.created_at)%> ago </span>
+<div class="ui container" id="user_pro">
+<div  id="my-posts" class="top_pad">
+  <div id="route_info">
+    <div class="route_home">
+      <%= link_to 'Home >', root_url%>
     </div>
-    <div class="description">
-      <%= @user.username %> is an art director living in New York.
+    <div class="route_title">
+      User Profile
     </div>
   </div>
-  <div class="extra content">
-    <a>
-      <i class="user icon"></i>
-      <%= @user.articles.count %> Posts
-    </a>
-  </div>
-</div>
+  <div class="profile_container">
+    <div class="user_info">
+      <div class="name">
+        <div class="user_name">
+          <%= @user.username %>
+        </div>
+        <div class="user_mail">
+          <%= @user.email %>
+        </div>
+      </div>
+      <div class="posts">
+        <div class="post_ico">
 
-
+        </div>
+        <div class="post_count">
+            <%= @user.articles.count %> Posts
+        </div>
+      </div>
+      <div class="change_settings">
+          <%= link_to 'Edit profile', edit_user_registration_path%>
+      </div>
+    </div>
 <% if @invites %>
 
-<table class="ui basic table">
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Accept</th>
-      <th>Reject</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @invites.each do |invite| %>
-    <tr>
-      <td><%=invite.article.title%></td>
-      <td><%= link_to "accept", invite_accept_article_path(:invite_id => invite.id) ,method: :post%></td>
-      <td><%= link_to "reject", invite_reject_article_path(:invite_id => invite.id) ,method: :delete%></td>
-    </tr>
-    <% end %>
+    <div class="invitations">
+      <div class="invitation_padding">
+        <div class="invitation_count">
+            INVITATIONS (<%=@invites.count%>)
+        </div>
+      </div>
+<% @invites.each do |invite| %>
+      <div class ="invite" id="invite-<%=invite.id%>">
+        <div class ="invite_body">
+          <div class ="invite_head">
+            <div class ="invited_user">
+              <div class ="invited_user_name">
+                  <%= invite.article.user.email %>
+              </div>
+              <div class ="invited_text">
+                  invited you to join his post
+              </div>
+            </div>
+            <div class ="invited_time">
+                <%= time_ago_in_words(invite.created_at) %> ago
+            </div>
+          </div>
+          <div class ="invite_post_name">
+                <%=invite.article.title%>
+          </div>
+          <div class ="invite_operation">
+            <div class ="invite_accept">
+                <%= link_to "Accept", invite_accept_article_path(:invite_id => invite.id) ,method: :post, :remote => true %>
+            </div>
+            <div class ="invite_reject">
+                <%= link_to "Reject", invite_reject_article_path(:invite_id => invite.id) ,method: :delete, :remote => true %>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>
+      <div class="pag_space">
+        <div id="paginate_div">
+          <%= will_paginate @invites, :previous_label => 'Previous', :next_label => 'Next' %>
+        </div>
+      </div>
+    </div>
 
-  </tbody>
-</table>
+  </div>
 
 <% end %>
+</div>
+</div>

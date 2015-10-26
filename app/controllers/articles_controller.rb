@@ -89,22 +89,30 @@ class ArticlesController < ApplicationController
   end
 
   def invite
-    @invite = Invite.new(invite_params)
-    if  Invite.where(:user_id => @invite.user_id , :article_id => @invite.article_id).blank?
-      @invite.save
+    count=0;
+    if params[:user_id]
+      params[:user_id].each do |u_id|
+        @invite = Invite.new(invite_params)
+        @invite.user_id=u_id.to_i
+        if @invite.save
+          count +=1
+        end
+      end
     end
+    flash[:success] = "Your post is shared with #{count} people" 
+    redirect_to :back
   end
 
   def invite_accept
-    invite_id = params[:invite_id]
-    Invite.where( id: invite_id ).update_all( invite_accepted: 'true' )
-    redirect_to :back
+    @invite_id = params[:invite_id]
+    Invite.where( id: @invite_id ).update_all( invite_accepted: 'true' )
+    @invites = Invite.where(:user_id => current_user.id , :invite_accepted => 'false')
   end
 
   def invite_reject
-    invite_id = params[:invite_id]
-    Invite.where( id: invite_id ).destroy_all
-    redirect_to :back
+    @invite_id = params[:invite_id]
+    Invite.where( id: @invite_id ).destroy_all
+    @invites = Invite.where(:user_id => current_user.id , :invite_accepted => 'false')
   end
 
 
@@ -116,7 +124,7 @@ class ArticlesController < ApplicationController
   end
 
   def invite_params
-    params.permit(:user_id, :article_id, :invite_accepted)
+    params.permit(:article_id, :invite_accepted)
   end
 
 

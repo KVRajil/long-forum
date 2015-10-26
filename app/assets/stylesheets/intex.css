@@ -17,12 +17,8 @@
 
 }
 
-#sort_list  a:hover{
-    border-bottom:3px solid #e67e22;
-
-}
-
 #sort_list .active a{
+  padding-bottom: 10px;
   border-bottom:3px solid #e67e22;
 }
 
@@ -149,4 +145,8 @@
 }
 #content .author a{
   color: #333333;
+}
+
+.top_pad{
+  padding-top: 30px;
 }

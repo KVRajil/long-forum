@@ -16,7 +16,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
-//= require bootstrap
 //= require tag-it
 //= require autocomplete-rails
 //= require ckeditor/init

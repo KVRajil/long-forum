@@ -1,23 +1,39 @@
 <div id="invite_head">
   Invite People
 </div>
+
 <div id ="invite_search">
-  <%= form_tag url_for(invite_articles_path), :remote => true do %>
-          <div class="ui input">
-            <%= autocomplete_field_tag :email, params[:email], autocomplete_user_email_users_path, :element_id=>"#id" , :update_elements => {}, :placeholder =>"Type user's name" %>
-         </div>
-         <%= hidden_field_tag :user_id %>
-         <%= hidden_field_tag :article_id, @article.id %>
-         <div id="user_inv"></div>
-         <%= submit_tag "Invite" %>
-       <% end %>
+  <div class="ui input">
+    <%= autocomplete_field_tag :email, params[:email], autocomplete_user_email_users_path, :class =>"search_box" , :update_elements => {}, :placeholder =>"Type user's name" %>
+  </div>
 </div>
+
 <div id="selected_val"> Shared with :</div>
 
-<script>
-$(document).ready(function () {
- $('#user_id').on('autocompletechange change', function () {
-     $('#selected_val').append('<div class ="item">' + this.value + '</div>');
- }).change();
-});
-</script>
+<div id="invite_button_group">
+  <%= form_tag url_for(invite_articles_path) do %>
+
+         <%= hidden_field_tag :article_id, @article.id %>
+         <%= submit_tag "Invite",class:"ui button" ,id:"sub_button" %>
+  <% end %>
+  <button type="button" class = "ui violet basic button" id="cancel_button1" >Cancel</button>
+</div>
+
+
+  <script>
+  $(document).ready(function () {
+
+       $('.search_box').bind('railsAutocomplete.select', function(event, data){
+          if ($('#selected_val > div:contains('+this.value+')').length == 0) {
+              $('#selected_val').append('<div class ="shared_item">' + this.value + '</div>');
+              //$('input#user_id').val(data.item.id)
+              $('form').append('<input type="hidden" name="user_id[]" id="user_id" value='+data.item.id+'>')
+
+          }
+          $('#email').val('')
+        });
+
+
+
+  });
+  </script>

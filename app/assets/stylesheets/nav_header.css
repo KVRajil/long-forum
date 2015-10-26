@@ -2,7 +2,6 @@
   background-color: #493172;
   height: 50px;
   border-radius: 0px;
-
 }
 .nav_align{
   display: flex;
@@ -12,7 +11,7 @@
 #tag_search{
 
   width: 300px;
-  padding-top: 5px;
+  padding-top: 7px;
   padding-bottom: 7px;
   border-radius: 4px;
   margin-left: 50px;
@@ -22,6 +21,8 @@
   outline-style:none;
   box-shadow:none;
   border-color:transparent;
+  height: 36px;
+  padding: none;
 }
 
 #tag_search input[type="text"]:focus {
@@ -79,7 +80,7 @@ body{
   display: block;
   width: 0;
   z-index: 1;
-  top: -13px;
+  top: -12px;
   left: 83px;
 }
 #user_click .pointer:after{
@@ -124,6 +125,7 @@ body{
 }
 #dropdown_user .item{
   height: 45px;
+  padding: 1.2rem 1.2rem !important;
 }
 #dropdown_user .item a{
   color: #333;

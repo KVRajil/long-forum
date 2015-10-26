@@ -7,6 +7,8 @@
 
 #paginate_div .next.next_page  {
   border: solid 1px #999999;
+  padding-left: 17px;
+  padding-right: 17px;
 }
 
 #paginate_div li{
@@ -14,6 +16,7 @@
   padding: 5px;
   border-radius: 4px;
   margin:0 0 0 10px;
+
 
 }
 
@@ -28,11 +31,12 @@
   width: 100%;
   border-top: 2px solid #f2f1ef;
   padding-right: 30px;
-  padding-top: 20px;
+
 }
 #paginate_div .pagination{
   float: right;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 #paginate_div a{

@@ -1,5 +1,5 @@
 <div class="ui container">
-<div  id="my-posts">
+<div  id="my-posts" class="top_pad">
     <div id="route_info">
       <div class="route_home">
         <%= link_to 'Home >', root_url%>
@@ -12,6 +12,11 @@
       <div class="route_title">
         <%= truncate(@article.title , :length => 100) %>
       </div>
+    </div>
+    <div class="shared_status">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
     </div>
     <div id="post_container">
       <div class="post_padding">
@@ -51,7 +56,7 @@
            <div class="post_operations">
 
              <% if @article.user_id == current_user.id %>
-               <div class="ui simple dropdown item" id=user_click>
+               <div class="ui simple dropdown item" id=op_click>
                  <div id=operation_ico>
                  </div>
                  <div class="menu" id="dropdown_post">
@@ -101,6 +106,9 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+  setTimeout(function(){
+  $('.shared_status').remove();
+}, 4000);
   $('#cform').hide();
   $('.comment_head_right').click(function() {
                 $('#cform').slideToggle("fast");
@@ -122,22 +130,34 @@ $(document).ready(function(){
     $(document).keyup(function (e) {
         if (e.keyCode == 27 && $('html').hasClass('overlay')) {
             clearPopup();
+            $('.shared_item').empty();
         }
     });
 
-    $('.popup-exit').click(function () {
+    $('#cancel_button1').click(function () {
         clearPopup();
+        $("form").trigger("reset");
 
     });
+    $('#sub_button').click(function () {
+        submit_result();
+        clearPopup();
+        $('.shared_item').empty();
+    });
+
 
     $('.popup-overlay').click(function () {
         clearPopup();
+        $('.shared_item').empty();
     });
+    function submit_result()
+    {
 
+    }
     function clearPopup() {
         $('.popup.visible').addClass('transitioning').removeClass('visible');
         $('html').removeClass('overlay');
-
+        $("input[type='hidden']#user_id").remove();
         setTimeout(function () {
             $('.popup').removeClass('transitioning');
         }, 200);
