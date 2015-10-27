@@ -9,45 +9,62 @@
 </head>
 <body>
 
-  <div id="navbar">
+<% if current_user %>
+    <div id="navbar">
 
-    <div class="nav_align">
-      <div id=logo>
-        <div id=logo_ico>
+      <div class="nav_align">
+        <div id=logo>
+          <div id=logo_ico>
 
-        </div>
-      </div>
-      <div id="app_name">
-
-        <%= link_to 'Forum', root_url%>
-      </div>
-
-
-        <form action="<%= articles_path %>" data-remote="true" method="get" >
-          <div class="ui input" id="tag_search">
-            <input type="text" name="tag" id="tag" placeholder="Search using tags" autocomplete="off">
           </div>
-        </form>
+        </div>
+        <div id="app_name">
 
-      <div id="new_post_button">
-        <%= button_to "New Post", new_article_path, :class => "ui button", :method => :get  %>
-      </div>
-      <div class="ui simple dropdown item" id=user_click>
-        <div id=user_ico>
-
+          <%= link_to 'Forum', root_url%>
         </div>
 
-        <div class="menu" id="dropdown_user">
-          <div class="pointer"></div>
-          <div class="item"><%= link_to "View Profile", current_user %></div>
-          <div class="item"><%= link_to 'Edit profile', edit_user_registration_path%></div>
-          <div class="item">  <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></div>
-        </div>
-      </div>
 
-</div>
+          <form action="<%= articles_path %>" data-remote="true" method="get" >
+            <div class="ui input" id="tag_search">
+              <input type="text" name="tag" id="tag" placeholder="Search using tags" autocomplete="off">
+            </div>
+          </form>
+
+        <div id="new_post_button">
+          <%= button_to "New Post", new_article_path, :class => "ui button", :method => :get  %>
+        </div>
+        <div class="ui simple dropdown item" id=user_click>
+          <div id=user_ico>
+
+          </div>
+
+          <div class="menu" id="dropdown_user">
+            <div class="pointer"></div>
+            <div class="item"><%= link_to "View Profile", current_user %></div>
+            <div class="item"><%= link_to 'Edit profile', edit_user_registration_path%></div>
+            <div class="item">  <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+<% else %>
+<div id="navbar">
+
+  <div class="nav_align"style="padding-top: 16px;  margin-left: -1000px;">
+    <div id=logo>
+      <div id=logo_ico>
+
+      </div>
+    </div>
+    <div id="app_name">
+
+      <%= link_to 'Forum', root_url%>
     </div>
 
+  </div>
+</div>
+<% end %>
   <%= yield %>
   <div class="footer_form">
   </div>

@@ -7,7 +7,7 @@
   font-size: 14px;
 }
 #sort_list ul {
-
+  line-height: 33px;
   margin-left: -33px;
 }
 
@@ -33,7 +33,7 @@
 
 
 #index_comment{
-  width: 110px;
+  width: 10%;
   min-height: 110px;
   float: right;
 }
@@ -41,7 +41,7 @@
    background-color:#FFD4AE;
 }
 #index_favorite{
-  width: 110px;
+  width: 10%;
   min-height: 110px;
   border-left:1px solid #f2f1ef;
   border-right:1px solid #f2f1ef;
@@ -96,13 +96,18 @@
 #post_align_centre{
   width: 100%;
   height: 110px;
-  padding-top: 45px;
-  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
 }
 #content{
   float: left;
-  width: 800px;
+  width: 75%;
+  position: relative;
+  padding-bottom: 50px;
 }
 #content .content_padding{
   padding-top: 20px;
@@ -118,26 +123,27 @@
 #content .foot{
   font-size: 12px;
   color: #999999;
-  position: relative;
-  bottom: -30px;
+  position: absolute;
+  bottom: 0;
 }
 #content .time{
   float: left;
 }
 #content .author{
-  padding-left: 2px;
+  padding-left: 5px;
   float: left;
 }
 #content .tags{
   padding-left: 30px;
   float: left;
+
 }
 #tag_ico{
   width: 20px;
   height: 20px;
   background: url(/Sprite_20px.png) -40px -20px ;
   float: left;
-  padding-right: 30px;
+  margin-right: 30px;
 }
 #content .tags a{
   color: #999999;

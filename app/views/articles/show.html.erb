@@ -15,7 +15,9 @@
     </div>
     <div class="shared_status">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <% if key =='success_share' %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
       <% end %>
     </div>
     <div id="post_container">
@@ -139,21 +141,12 @@ $(document).ready(function(){
         $("form").trigger("reset");
 
     });
-    $('#sub_button').click(function () {
-        submit_result();
-        clearPopup();
-        $('.shared_item').empty();
-    });
-
-
+    
     $('.popup-overlay').click(function () {
         clearPopup();
         $('.shared_item').empty();
     });
-    function submit_result()
-    {
 
-    }
     function clearPopup() {
         $('.popup.visible').addClass('transitioning').removeClass('visible');
         $('html').removeClass('overlay');

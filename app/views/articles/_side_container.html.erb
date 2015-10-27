@@ -28,9 +28,9 @@
     </div>
     <div class="user_list">
       <%  @article.invites.each do |t| %>
-        <div class="user">
-          <%=t.user.username %>
-       </div>
+          <div class="user">
+            <%=t.user.username %>
+         </div>
          <%end%>
     </div>
     <% if current_user.id == @article.user_id %>

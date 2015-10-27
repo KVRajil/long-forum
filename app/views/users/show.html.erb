@@ -26,9 +26,11 @@
             <%= @user.articles.count %> Posts
         </div>
       </div>
-      <div class="change_settings">
-          <%= link_to 'Edit profile', edit_user_registration_path%>
-      </div>
+      <% if @user == current_user%>
+        <div class="change_settings">
+            <%= link_to 'Edit profile', edit_user_registration_path%>
+        </div>
+      <% end %>
     </div>
 <% if @invites %>
 

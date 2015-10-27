@@ -26,9 +26,7 @@
 
 
 
-#invited{
-  color: green;
-}
+
 
 
 .taglist{
@@ -143,4 +141,41 @@ margin: 200px 0px 0px 200px;
 .popup-content p {
     font-size: 13px;
     text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ui.button.large.fluid.green {
+    background-color: #8e44ad;
+    color: #ffffff;
+    text-shadow: none;
+    background-image: none;
+}
+
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
 }

@@ -99,7 +99,7 @@ class ArticlesController < ApplicationController
         end
       end
     end
-    flash[:success] = "Your post is shared with #{count} people" 
+    flash[:success_share] = "Your post is shared with #{count} people" 
     redirect_to :back
   end
 

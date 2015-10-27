@@ -107,4 +107,17 @@
   padding-right: 20px;
   background-color: white;
 }
-#user_pro .post_ico{}
+#user_pro .post_ico{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) -60px -20px;
+  float: left;
+  margin-right: 10px;
+}
+#user_pro .post_ico:hover{
+  width: 20px;
+  height: 20px;
+  background: url(/Sprite_20px.png) -60px -40px;
+  float: left;
+  margin-right: 10px;
+}

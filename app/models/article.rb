@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
   acts_as_taggable
+  before_create :parent_check
   after_update :visibility_check
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -18,7 +19,22 @@ class Article < ActiveRecord::Base
 
   def visibility_check
     if self.visibility == 'public'
-      Invite.where(:article_id => self.id).destroy_all
+      Invite.where(article_id: self.id).destroy_all
+    end
+  end
+
+  def parent_check
+    if  self.parent_type == "0"
+      true
+    elsif Article.exists?(id: self.parent_type)
+        article = self.parent_article
+          if article.user_id == LongForum.current_user.id || article.visibility == "public" || Invite.where(:user_id => LongForum.current_user.id , :article_id => article.id ,:invite_accepted => 'true').present?
+            true
+          else
+            false
+          end
+    else
+      false
     end
   end
 end

@@ -3,7 +3,7 @@
           <div id="content">
               <div class="content_padding">
                 <div class="title">
-                  <%= link_to truncate(article.title , :length => 70) , article_path(article) %>
+                  <%= link_to truncate(article.title , :length => 80) , article_path(article) %>
                 </div>
                 <div class="foot">
 
@@ -16,7 +16,7 @@
                   <div class="tags">
                     <div id=tag_ico>
                     </div>
-                    <%= raw article.tag_list.map { |t| link_to t, tag_path(t) }.join(' ') %>
+                    <%= raw article.tag_list.first(5).map { |t| link_to t, tag_path(t) }.join(' ')%>
                   </div>
 
                 </div>
