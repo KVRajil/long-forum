@@ -6,5 +6,10 @@ class UsersController < ApplicationController
       @invites = Invite.where(:user_id => current_user.id , :invite_accepted => 'false').paginate(page: params[:page], per_page: 5)
     end
   end
+  def get_autocomplete_items(parameters)
+    items = super(parameters)
+    items = items.where("id NOT IN (?)",current_user)
+  end
+
 
 end

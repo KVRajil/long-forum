@@ -25,8 +25,10 @@
          <div id="index_comment">
            <div id="post_align_centre">
              <div id="fav_icon">
-               <div id="comment_ico">
-               </div>
+               <%= link_to article_path(article) + "#comment_container" do %>
+                 <div id="comment_ico">
+                 </div>
+                <% end %>
                <div id="fav_count">
                  <%= article.comments.count %>
                </div>
@@ -55,9 +57,4 @@
       </div>
       <div id="spacing_index">
       </div>
-
-      <script type="text/javascript">
-      $(document).ready(function(){
-        $('.initialjs-avatar').initial();
-      })
-      </script>
+ 

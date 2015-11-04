@@ -4,7 +4,7 @@
 }
 #create_post .new_post_padding{
   padding: 30px;
-  padding-right: 280px;
+  padding-right: 380px;
   padding-bottom: 75px;
 }
 #create_post .post_title{
@@ -35,5 +35,6 @@
   font-size: 16px;
   border-radius: 4px;
   float: left;
+  margin-right: 10px;
 
 }

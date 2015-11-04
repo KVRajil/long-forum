@@ -24,7 +24,7 @@
   $(document).ready(function () {
 
        $('.search_box').bind('railsAutocomplete.select', function(event, data){
-          if ($('#selected_val > div:contains('+this.value+')').length == 0) {
+          if ($('#selected_val > div:contains('+this.value+')').length == 0 && data.item.id ) {
               $('#selected_val').append('<div class ="shared_item">' + this.value + '</div>');
               //$('input#user_id').val(data.item.id)
               $('form').append('<input type="hidden" name="user_id[]" id="user_id" value='+data.item.id+'>')

@@ -19,7 +19,7 @@
     font-size: 16px;
     float: left;
     height: 33px;
-    padding-top: 7px;
+    padding-top: 8px;
     margin-right: 10px;
 }
 
@@ -37,6 +37,7 @@
 }
 .ui-autocomplete{
   z-index: 2147483647;
+  position: fixed;
 }
 .ui-widget-content ul{
   z-index: 2147483647;
@@ -91,4 +92,25 @@
   padding-top: 20px;
   padding-left: 35px;
   margin-bottom: 20px;
+}
+
+
+
+.ui-menu .ui-menu-item {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  border: none;
+  height: auto;
+  text-align: left;
+  border-top: none;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0.71428571rem 1.14285714rem !important;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: normal;
+  box-shadow: none;
+  -webkit-touch-callout: none;
+  background-color: white;
 }

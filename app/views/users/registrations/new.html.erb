@@ -18,10 +18,7 @@
               </div>
 
               <div class="field">
-                <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
-                <%= f.password_field :password, autocomplete: "off", :placeholder => "password" %>
+                <%= f.password_field :password, autocomplete: "off", :placeholder => "password (8 characters minimum)" %>
               </div>
 
               <div class="field">
@@ -32,8 +29,9 @@
                 <%= f.submit "Sign up" , class:"ui button large fluid green" %>
               </div>
             <% end %>
-
-            <%= render "users/shared/links" %>
+            <div id="user_reg_links">
+              <%= render "users/shared/links" %>
+            </div>
           </div>
         </div>
       </div>

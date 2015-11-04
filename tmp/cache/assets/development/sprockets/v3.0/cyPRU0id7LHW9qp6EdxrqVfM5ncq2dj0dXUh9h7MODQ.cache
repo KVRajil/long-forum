@@ -1,0 +1,26 @@
+I"´(function() {
+  $(document).on('ready page:load', function() {
+    if ($('#infinite-scrolling').size() > 0) {
+      console.log("haaaaaaaaaai");
+      $(window).on('scroll', function() {
+        var more_posts_url;
+        if ($('#tag').val()) {
+          more_posts_url = $('#infinite-scrolling .next_page a').attr('href');
+          if (more_posts_url) {
+            more_posts_url = more_posts_url + "&tag=" + $('#tag').val();
+          }
+        } else {
+          more_posts_url = $('#infinite-scrolling .next_page a').attr('href');
+        }
+        if (more_posts_url && $(window).scrollTop() > $(document).height() - $(window).height() - 290) {
+          $('.pagination').html('<div id="anim_load"><img src="/assets/103.GIF" alt="Loading..." title="Loading..." /></div>');
+          setTimeout((function() {
+            return $.getScript(more_posts_url, function() {});
+          }), 2000);
+        }
+      });
+    }
+  });
+
+}).call(this);
+:ET

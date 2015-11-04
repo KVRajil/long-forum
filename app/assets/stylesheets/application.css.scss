@@ -1,5 +1,4 @@
 @import "semantic-ui";
-@import "jquery-ui";
 @import "nav_header";
 @import "intex";
 @import "post";
@@ -7,11 +6,13 @@
 @import "side_container";
 @import "new_post";
 @import "form";
+@import "jquery-ui";
 @import "popup";
 @import "jquery.tagit";
 @import "tagit.ui-zendesk";
 @import "paginate";
 @import "user_profile";
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

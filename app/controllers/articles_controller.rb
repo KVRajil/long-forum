@@ -40,7 +40,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @users = User.where("id NOT IN (?)",current_user)
       if @article.user_id == current_user.id || @article.visibility == "public" || Invite.where(:user_id => current_user.id , :article_id => @article.id ,:invite_accepted => 'true').present?
         @sub_articles = @article.sub_articles
         @comments = Comment.where(:article_id => @article.id).paginate(page: params[:page], per_page: 3)
@@ -93,13 +92,13 @@ class ArticlesController < ApplicationController
     if params[:user_id]
       params[:user_id].each do |u_id|
         @invite = Invite.new(invite_params)
-        @invite.user_id=u_id.to_i
+        @invite.user_id = u_id
         if @invite.save
           count +=1
         end
       end
     end
-    flash[:success_share] = "Your post is shared with #{count} people" 
+    flash[:success_share] = "Your post is shared with #{count} people"
     redirect_to :back
   end
 

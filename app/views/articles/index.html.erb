@@ -14,21 +14,12 @@
 
 
   <div  id="my-posts">
-
-
-      <%= render @articles %>
-
-
-    <div id="infinite-scrolling">
-
-        <%= will_paginate %>
-
-    </div>
-
+    <%= render 'article_paginate' %>
   </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
+      $('.pagination ul').hide();
       $(function() {
 
            var pgurl = '/'+ window.location.href.substr(window.location.href.lastIndexOf("/")+1);

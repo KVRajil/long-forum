@@ -10,14 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
-//= require_tree .
 //= require tag-it
 //= require autocomplete-rails
 //= require ckeditor/init
 //= require semantic-ui
-//= require initial
+//= require_tree .
+//= require turbolinks

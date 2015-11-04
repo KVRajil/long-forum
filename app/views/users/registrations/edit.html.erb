@@ -22,8 +22,7 @@
               <% end %>
 
               <div class="field">
-                 <i>(leave blank if you don't want to change it)</i><br />
-                <%= f.password_field :password, autocomplete: "off" , :placeholder => "new password" %>
+                <%= f.password_field :password, autocomplete: "off" , :placeholder => "new password " %>
               </div>
 
               <div class="field">
@@ -31,7 +30,7 @@
               </div>
 
               <div class="field">
-               <i>(we need your current password to confirm your changes)</i><br />
+
                 <%= f.password_field :current_password, autocomplete: "off" , :placeholder => "current password"%>
               </div>
 
@@ -39,8 +38,9 @@
                 <%= f.submit "Update" , class:"ui button large fluid green" %>
               </div>
             <% end %>
-
-            <%= render "users/shared/links" %>
+            <div id="user_reg_links">
+                <%= render "users/shared/links" %>
+            </div>
           </div>
         </div>
       </div>

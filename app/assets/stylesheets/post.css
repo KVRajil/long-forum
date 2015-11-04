@@ -27,12 +27,13 @@
   background-color: white;
   height: auto;
   border-radius: 4px;
+  margin-right: 30px;
+  margin-bottom: 2px;
 }
 #side_container{
   width: 27%;
   float: left;
   background-color: white;
-  margin-left: 30px;
   height: auto;
   border-radius: 4px;
 }
@@ -48,6 +49,7 @@
   max-width: 90%;
   padding-top: 30px;
   padding-bottom: 30px;
+
 }
 #post_container .post_padding{
   padding-left: 30px;
@@ -186,6 +188,7 @@
 }
 #dropdown_post .item a{
   color: #333;
+  display: block;
 }
 #dropdown_post .item:hover {
     background-color: #FFD4AE;

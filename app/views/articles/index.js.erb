@@ -1,11 +1,26 @@
 <%if @tag_list %>
- $('#my-posts').html('<%= j render @articles %>')
+   <% unless @articles.count==0 %>
+    <% unless @articles.previous_page %>
+      $('#my-posts').html('<%= j render 'article_paginate' %>')
+    <% else %>
+      $('<%= j render @articles %>').insertBefore( "#infinite-scrolling" );
+      <% if @articles.next_page %>
+          $('.pagination').replaceWith('<%= j will_paginate @articles %>');
+      <% else %>
+          $(window).off('scroll');
+          $('.pagination').remove();
+      <% end %>
+    <% end %>
+  <% else %>
+    $('#load_post').html('<%= j render 'no_posts' %>')
+  <% end %>
 <% else %>
-$('<%= j render @articles %>').insertBefore( "#infinite-scrolling" );
-<% if @articles.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @articles %>');
-<% else %>
-  $(window).off('scroll');
-  $('.pagination').remove();
+
+    $('<%= j render @articles %>').insertBefore( "#infinite-scrolling" );
+    <% if @articles.next_page %>
+        $('.pagination').replaceWith('<%= j will_paginate @articles %>');
+    <% else %>
+        $(window).off('scroll');
+        $('.pagination').remove();
+    <% end %>
 <% end %>
-<%end %>

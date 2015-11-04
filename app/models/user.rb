@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
- 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
         has_many :favorite_articles,class_name:"Article", through: :favorites
         has_many :articles
         has_many :invites
-
+  
 
 end

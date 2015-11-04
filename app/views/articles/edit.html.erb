@@ -47,10 +47,10 @@
                         Type
                     </div>
                     <div class="field">
-                        <%= f.radio_button 'visibility', 'public', :checked => true %>
-                        <%= f.label :public_name, 'Public', :id => "public_name"  %>
-                        <%= f.radio_button 'visibility', 'private' %>
-                        <%= f.label :private_name, 'Private', :id => "private_name"  %>
+                      <%= f.radio_button 'visibility', 'public', :checked => true %>
+                      <%= f.label :visibility, 'Public', :id => "public_name" ,:value => 'public' %>
+                      <%= f.radio_button 'visibility', 'private' %>
+                      <%= f.label :visibility, 'Private', :id => "private_name",:value => 'private'   %>
                     </div>
                   <%= f.submit "Submit Post" ,class:"ui button"  %>
           <% end %>

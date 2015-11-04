@@ -1,0 +1,13 @@
+<%if @articles.count==0 %>
+  <div id="load_post">
+      <%= render 'no_posts' %>
+  </div>
+<% else %>
+  <div id="load_post">
+    <%= render @articles %>
+
+  </div>
+<% end %>
+<div id="infinite-scrolling">
+  <%= will_paginate (@articles)%>
+</div>

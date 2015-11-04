@@ -119,6 +119,7 @@ $(document).ready(function(){
   $('#cancel_button').click(function() {
                 $('#cform').slideToggle("fast");
                 $('.comment_head_right').show();
+                CKEDITOR.instances['comment_body'].setData('');
                 });
   $('#cform').insertBefore('.comment_head');
 
@@ -133,18 +134,21 @@ $(document).ready(function(){
         if (e.keyCode == 27 && $('html').hasClass('overlay')) {
             clearPopup();
             $('.shared_item').empty();
+            $('#email').val('')
         }
     });
 
     $('#cancel_button1').click(function () {
         clearPopup();
-        $("form").trigger("reset");
+        $('.shared_item').empty();
+        $('#email').val('')
 
     });
-    
+
     $('.popup-overlay').click(function () {
         clearPopup();
         $('.shared_item').empty();
+        $('#email').val('')
     });
 
     function clearPopup() {

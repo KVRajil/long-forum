@@ -130,6 +130,7 @@ body{
 #dropdown_user .item a{
   color: #333;
   font-size: 14px;
+  display: block;
 }
 
 #dropdown_user .item:hover {

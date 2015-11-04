@@ -6,7 +6,7 @@
   padding-left: 30px;
   padding-top: 30px;
   padding-right: 30px;
-  
+
 }
 #comment_container .comment_head{
   height: auto;
@@ -66,6 +66,7 @@
   padding-top: 9px;
   padding-bottom: 9px;
   float: left;
+  margin-right: 10px;
 
 }
 #comment_container .vote_comment{

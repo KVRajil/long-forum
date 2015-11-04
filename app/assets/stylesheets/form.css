@@ -6,6 +6,15 @@
 #error_explanation, .regerror , .alert.alert-danger{
   color:red;
 }
+#error_explanation {
+  text-align: left;
+}
+
+#error_explanation h2{
+  font-size: 16px;
+}
+
+
 .ui.navbar{margin-top: -13px;}
 
 .newpost{
@@ -24,7 +33,9 @@
 }
 
 
-
+#user_reg_links{
+    padding-top: 50px;
+}
 
 
 
@@ -38,9 +49,26 @@
   float: right;
 }
 
+.ui.form {
+  font-size: 1rem;
+  overflow: auto;
+}
 
+::-webkit-input-placeholder {
+   color: red;
+}
 
+:-moz-placeholder { /* Firefox 18- */
+   color: red;
+}
 
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
+
+:-ms-input-placeholder {
+   color: red;
+}
 
 
 

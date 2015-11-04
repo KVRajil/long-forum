@@ -73,7 +73,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  $('input[name=tag]').keyup( function () {
+  $('input[name=tag]').bind('input' , function () {
 
     $.ajax({
             url: "/articles",
